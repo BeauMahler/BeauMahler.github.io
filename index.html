@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Character menu prototype</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script type="text/javascript" src="changes.js"></script>
+    </head>
+    <body onload = "init()">
+        <div id="main">
+            <div id="characterbox"><img id="characterImage" src="images/prototype_character_MAIN_neutral.png"/></div>
+            <div id="menubox">
+                <button onclick="masculineBodyType()">MASCULINE</button>
+                <button onclick="feminineBodyType()">FEMININE</button>
+                <button onclick="neutralBodyType()">NEUTRAL</button>
+                <div class="slidecontainer">
+                    Height: <input type="range" min="1" max="10" value="5" class="slider" id="heightSlider" oninput="heightChanged()">
+                </div>
+                <p id="slidervalue">Value=</p>
+                <div class="slidecontainer">
+                    Skin Color: <input type="range" min="1" max="10" value="5" class="slider" id="skinColorSlider" oninput="skinColorChanged()">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <p id="text">This is text whoop.</p>
+        <button id="test">Button</button> -->
+    </body>
+</html>
