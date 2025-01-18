@@ -8,14 +8,15 @@ body {
     height: 700px;
     width: 70%;
     margin: auto;
+    /* overflow: hidden; */
 }
 
 #characterbox{
     width: 465px; 
-    height: 650px;
+    /* height: 650px; */
     border: 2px solid;
     margin-left: 50px;
-    margin-top: 10px;
+    margin-top: 25px;
     float:left;
     overflow: hidden;
 }
@@ -24,7 +25,7 @@ body {
     height: 650px;
     margin-right: 50px;
     border:2px solid;
-    margin-top: 10px;
+    margin-top: 25px;
     float:right;
 }
 
@@ -35,9 +36,9 @@ body {
     /* height:100%; */
 }
 
-.slidercontainer {
+/* .slidercontainer {
    
-}
+} */
 .slider {
     width: 80%;
     height: 35px;
