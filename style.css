@@ -11,7 +11,7 @@ body {
     /* overflow: hidden; */
 }
 
-#characterbox{
+#characterbox, #characterbox2{
     width: 465px; 
     /* height: 650px; */
     border: 2px solid;
@@ -29,7 +29,7 @@ body {
     float:right;
 }
 
-#characterbox img {
+#characterbox img , #characterbox2 img{
     width: 100%;
     height: 100%;
     object-fit:fill;

@@ -60,7 +60,7 @@ function weightChanged(){
     if(newWeightSliderValue < currentWeightSliderValue){ //thinner
         var difference = currentWeightSliderValue - newWeightSliderValue; //steps
 
-        document.getElementById("characterImage").style.width = currentWeight - 55*difference + "px"; //set new weight
+        document.getElementById("characterImage").style.width = currentWeight - 75*difference + "px"; //set new weight
 
         var newWidth = parseInt(document.getElementById("characterImage").style.width);
         newMarginLEFT = (-newWidth/2)+465/2;
@@ -69,7 +69,6 @@ function weightChanged(){
     }
     currentWeightSliderValue = newWeightSliderValue; 
 }
-
 
 function skinColorChanged(){
     var skinColorSlider = document.getElementById("skinColorSlider");
@@ -95,3 +94,46 @@ function skinColorChanged(){
     if(skinColorSlider.value == 20) {document.getElementById("characterImage").style.backgroundColor = ' #c5845c';}
 }
 
+let screen1_height;
+let screen1_width;
+let screen1_img;
+let screen1_skincolor;
+
+function saveValues(){
+    screen1_height = document.getElementById("characterbox").style.height;
+   // screen1_boxwidth = document.getElementById("characterbox").style.width;
+    screen1_width = document.getElementById("characterImage").style.width;
+    screen1_img = document.getElementById("characterImage").src;
+    screen1_marginTOP = document.getElementById("characterbox").style.marginTop;
+    screen1_marginLEFT = document.getElementById("characterImage").style.marginLeft;
+    screen1_skincolor = document.getElementById("characterImage").style.backgroundColor;
+
+    sessionStorage.setItem("screen1Height", screen1_height);
+    sessionStorage.setItem("screen1marginTOP", screen1_marginTOP);
+    sessionStorage.setItem("screen1marginLEFT", screen1_marginLEFT);
+    sessionStorage.setItem("screen1Width", screen1_width);
+    sessionStorage.setItem("screen1Img", screen1_img);
+    sessionStorage.setItem("screen1Skincolor", screen1_skincolor);
+
+    console.log("SAVED. height: " + screen1_height);
+    console.log("width:" + screen1_width);
+    console.log("src: " + screen1_img);
+    console.log("color " +screen1_skincolor);      
+}   
+
+function loadFaceScreen(){
+    // console.log("RECEIVED. height: " + getHeight);
+    // console.log("width:" + getWidth);
+    // console.log("src: " + getSrc);
+    // console.log("color " +getColor);
+
+    var charBox = document.getElementById("characterbox2");
+    var charImg = document.getElementById("characterImage2");
+
+    charBox.style.height = sessionStorage.getItem('screen1Height');
+    charImg.style.width = sessionStorage.getItem('screen1Width');
+    charImg.src = sessionStorage.getItem('screen1Img');
+    charBox.style.marginTop = sessionStorage.getItem('screen1marginTOP');
+    charImg.style.marginLeft = sessionStorage.getItem('screen1marginLEFT');
+    charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor');      
+}
