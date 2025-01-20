@@ -3,16 +3,27 @@ function init(){
     heightChanged();
 }
 
+var currentBodyType = "neutral";
+
 function masculineBodyType(){
+    currentBodyType = "masculine";
     document.getElementById("characterImage").src = "images/prototype_character_MAIN_masculine.png";
+    document.getElementById("muscleSlider").value = 1; //reset muscles
+    currentMuscleSliderValue = 1;
 }
 
 function feminineBodyType(){
+    currentBodyType = "feminine";
     document.getElementById("characterImage").src = "images/prototype_character_MAIN_Feminine.png";
+    document.getElementById("muscleSlider").value = 1; //reset muscles
+    currentMuscleSliderValue = 1;
 }
 
 function neutralBodyType(){
+    currentBodyType = "neutral";
     document.getElementById("characterImage").src = "images/prototype_character_MAIN_neutral.png";
+    document.getElementById("muscleSlider").value = 1; //reset muscles
+    currentMuscleSliderValue = 1;
 }
 
 var currentHeightSliderValue = 7;
@@ -68,6 +79,46 @@ function weightChanged(){
         document.getElementById("characterImage").style.marginLeft = newMarginLEFT + "px"; //set new margin
     }
     currentWeightSliderValue = newWeightSliderValue; 
+}
+
+var currentMuscleSliderValue = 1;
+
+function musclesChanged(){
+    var newMuscleSliderValue = document.getElementById("muscleSlider").value;
+    var image = document.getElementById("characterImage");
+    var newSrcValue;
+
+    if(newMuscleSliderValue > currentMuscleSliderValue) { //bigger
+        var steps = Math.abs(newMuscleSliderValue - currentMuscleSliderValue);
+
+        if(steps == 1 && currentMuscleSliderValue == 1){ // none to middle
+            if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M2.png"}
+            else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M2.png"}
+            else { newSrcValue = "images/prototype_character_MAIN_neutral_M2.png"};
+        }  
+        else{ //middle or none to max
+            if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M3.png"}  
+            else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M3.png"}
+            else { newSrcValue = "images/prototype_character_MAIN_neutral_M3.png"}; 
+        }
+    }
+    if(newMuscleSliderValue < currentMuscleSliderValue){ //smaller
+        var steps = Math.abs(currentMuscleSliderValue - newMuscleSliderValue);
+
+        if(steps == 1 && currentMuscleSliderValue == 3){ //max to middle
+            if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M2.png" }
+            else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M2.png"}
+            else { newSrcValue = "images/prototype_character_MAIN_neutral_M2.png"};
+        }
+        else{ //middle or max to none
+            if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine.png" }
+            else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine.png"}
+            else { newSrcValue = "images/prototype_character_MAIN_neutral.png"};
+        }   
+    }
+
+    image.src = newSrcValue;
+    currentMuscleSliderValue = newMuscleSliderValue;
 }
 
 function skinColorChanged(){
