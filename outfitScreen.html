@@ -5,11 +5,12 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <script type="text/javascript" src="changes.js"></script>
     </head>
-    <body>
+    <body onload="loadFaceScreen()">
         <div id="main">
-            <div id="characterbox"><img id="characterImage" src="images/prototype_character_MAIN_neutral.png"/></div>
+            <div id="characterbox2"><img id="characterImage2" src="images/prototype_character_MAIN_neutral.png"/></div>
             <div id="menubox">
-
+                <button class="previousButton"><a href="./FaceScreen.html" class="buttonText">Previous Screen</a></button>
+                <button class="nextButton" onclick="saveValues()"><a href="./extrasScreen.html" class="buttonText">Next Screen</a></button>
             </div>
         </div>
     </body>

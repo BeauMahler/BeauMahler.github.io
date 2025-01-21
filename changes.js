@@ -3,27 +3,30 @@ function init(){
     heightChanged();
 }
 
-var currentBodyType = "neutral";
+var currentBodyType = "neutral"; //init
 
 function masculineBodyType(){
     currentBodyType = "masculine";
-    document.getElementById("characterImage").src = "images/prototype_character_MAIN_masculine.png";
-    document.getElementById("muscleSlider").value = 1; //reset muscles
-    currentMuscleSliderValue = 1;
+    var muscles = document.getElementById("muscleSlider").value;
+    if(muscles == 1) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_masculine.png";}
+    else if(muscles == 2) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_masculine_M2.png";}
+    else {document.getElementById("characterImage").src = "images/prototype_character_MAIN_masculine_M3.png";}
 }
 
 function feminineBodyType(){
     currentBodyType = "feminine";
-    document.getElementById("characterImage").src = "images/prototype_character_MAIN_Feminine.png";
-    document.getElementById("muscleSlider").value = 1; //reset muscles
-    currentMuscleSliderValue = 1;
+    var muscles = document.getElementById("muscleSlider").value;
+    if(muscles == 1) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_Feminine.png";}
+    else if(muscles == 2) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_Feminine_M2.png";}
+    else {document.getElementById("characterImage").src = "images/prototype_character_MAIN_Feminine_M3.png";}
 }
 
 function neutralBodyType(){
     currentBodyType = "neutral";
-    document.getElementById("characterImage").src = "images/prototype_character_MAIN_neutral.png";
-    document.getElementById("muscleSlider").value = 1; //reset muscles
-    currentMuscleSliderValue = 1;
+    var muscles = document.getElementById("muscleSlider").value;
+    if(muscles == 1) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_neutral.png";}
+    else if(muscles == 2) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_neutral_M2.png";}
+    else {document.getElementById("characterImage").src = "images/prototype_character_MAIN_neutral_M3.png";}
 }
 
 var currentHeightSliderValue = 7;
@@ -81,44 +84,48 @@ function weightChanged(){
     currentWeightSliderValue = newWeightSliderValue; 
 }
 
-var currentMuscleSliderValue = 1;
+//var currentMuscleSliderValue = 1;
 
 function musclesChanged(){
-    var newMuscleSliderValue = document.getElementById("muscleSlider").value;
-    var image = document.getElementById("characterImage");
-    var newSrcValue;
+    if(currentBodyType == "feminine") {feminineBodyType();}
+    else if(currentBodyType == "masculine") {masculineBodyType();}
+    else{neutralBodyType();}
 
-    if(newMuscleSliderValue > currentMuscleSliderValue) { //bigger
-        var steps = Math.abs(newMuscleSliderValue - currentMuscleSliderValue);
+    // var newMuscleSliderValue = document.getElementById("muscleSlider").value;
+    // var image = document.getElementById("characterImage");
+    // var newSrcValue;
 
-        if(steps == 1 && currentMuscleSliderValue == 1){ // none to middle
-            if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M2.png"}
-            else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M2.png"}
-            else { newSrcValue = "images/prototype_character_MAIN_neutral_M2.png"};
-        }  
-        else{ //middle or none to max
-            if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M3.png"}  
-            else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M3.png"}
-            else { newSrcValue = "images/prototype_character_MAIN_neutral_M3.png"}; 
-        }
-    }
-    if(newMuscleSliderValue < currentMuscleSliderValue){ //smaller
-        var steps = Math.abs(currentMuscleSliderValue - newMuscleSliderValue);
+    // if(newMuscleSliderValue > currentMuscleSliderValue) { //bigger
+    //     var steps = Math.abs(newMuscleSliderValue - currentMuscleSliderValue);
 
-        if(steps == 1 && currentMuscleSliderValue == 3){ //max to middle
-            if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M2.png" }
-            else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M2.png"}
-            else { newSrcValue = "images/prototype_character_MAIN_neutral_M2.png"};
-        }
-        else{ //middle or max to none
-            if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine.png" }
-            else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine.png"}
-            else { newSrcValue = "images/prototype_character_MAIN_neutral.png"};
-        }   
-    }
+    //     if(steps == 1 && currentMuscleSliderValue == 1){ // none to middle
+    //         if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M2.png"}
+    //         else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M2.png"}
+    //         else { newSrcValue = "images/prototype_character_MAIN_neutral_M2.png"};
+    //     }  
+    //     else{ //middle or none to max
+    //         if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M3.png"}  
+    //         else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M3.png"}
+    //         else { newSrcValue = "images/prototype_character_MAIN_neutral_M3.png"}; 
+    //     }
+    // }
+    // if(newMuscleSliderValue < currentMuscleSliderValue){ //smaller
+    //     var steps = Math.abs(currentMuscleSliderValue - newMuscleSliderValue);
 
-    image.src = newSrcValue;
-    currentMuscleSliderValue = newMuscleSliderValue;
+    //     if(steps == 1 && currentMuscleSliderValue == 3){ //max to middle
+    //         if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M2.png" }
+    //         else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M2.png"}
+    //         else { newSrcValue = "images/prototype_character_MAIN_neutral_M2.png"};
+    //     }
+    //     else{ //middle or max to none
+    //         if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine.png" }
+    //         else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine.png"}
+    //         else { newSrcValue = "images/prototype_character_MAIN_neutral.png"};
+    //     }   
+    // }
+
+    // image.src = newSrcValue;
+    // currentMuscleSliderValue = newMuscleSliderValue;
 }
 
 function skinColorChanged(){
@@ -128,48 +135,36 @@ function skinColorChanged(){
     if(skinColorSlider.value == 3) {document.getElementById("characterImage").style.backgroundColor = ' #ffceb4';}
     if(skinColorSlider.value == 4) {document.getElementById("characterImage").style.backgroundColor = ' #ffc3aa';}
     if(skinColorSlider.value == 5) {document.getElementById("characterImage").style.backgroundColor = ' #f0b8a0';}
-    if(skinColorSlider.value == 6) {document.getElementById("characterImage").style.backgroundColor = ' #e1ac96';}
-    if(skinColorSlider.value == 7) {document.getElementById("characterImage").style.backgroundColor = ' #d2a18c';}
-    if(skinColorSlider.value == 8) {document.getElementById("characterImage").style.backgroundColor = ' #c39582';}
-    if(skinColorSlider.value == 9) {document.getElementById("characterImage").style.backgroundColor = ' #b48a78';}
-    if(skinColorSlider.value == 10) {document.getElementById("characterImage").style.backgroundColor = ' #a57e6e';}
-    if(skinColorSlider.value == 11) {document.getElementById("characterImage").style.backgroundColor = ' #967264';}
-    if(skinColorSlider.value == 12) {document.getElementById("characterImage").style.backgroundColor = ' #87675a';}
-    if(skinColorSlider.value == 13) {document.getElementById("characterImage").style.backgroundColor = ' #785c50';}
-    if(skinColorSlider.value == 14) {document.getElementById("characterImage").style.backgroundColor = ' #695046';}
-    if(skinColorSlider.value == 15) {document.getElementById("characterImage").style.backgroundColor = ' #5a453c';}
-    if(skinColorSlider.value == 16) {document.getElementById("characterImage").style.backgroundColor = ' #4b3932';}
-    if(skinColorSlider.value == 17) {document.getElementById("characterImage").style.backgroundColor = ' #3c2e28';}
-    if(skinColorSlider.value == 18) {document.getElementById("characterImage").style.backgroundColor = ' #593b2b';}
-    if(skinColorSlider.value == 19) {document.getElementById("characterImage").style.backgroundColor = ' #e9b78a';}
-    if(skinColorSlider.value == 20) {document.getElementById("characterImage").style.backgroundColor = ' #c5845c';}
+    if(skinColorSlider.value == 6) {document.getElementById("characterImage").style.backgroundColor = ' #e9b78a';}
+    if(skinColorSlider.value == 7) {document.getElementById("characterImage").style.backgroundColor = ' #e1ac96';}
+    if(skinColorSlider.value == 8) {document.getElementById("characterImage").style.backgroundColor = ' #d2a18c';}
+    if(skinColorSlider.value == 9) {document.getElementById("characterImage").style.backgroundColor = ' #c39582';}
+    if(skinColorSlider.value == 10) {document.getElementById("characterImage").style.backgroundColor = ' #b48a78';}
+    if(skinColorSlider.value == 11) {document.getElementById("characterImage").style.backgroundColor = ' #c5845c';}
+    if(skinColorSlider.value == 12) {document.getElementById("characterImage").style.backgroundColor = ' #a57e6e';}
+    if(skinColorSlider.value == 13) {document.getElementById("characterImage").style.backgroundColor = ' #967264';}
+    if(skinColorSlider.value == 14) {document.getElementById("characterImage").style.backgroundColor = ' #87675a';}
+    if(skinColorSlider.value == 15) {document.getElementById("characterImage").style.backgroundColor = ' #785c50';}
+    if(skinColorSlider.value == 16) {document.getElementById("characterImage").style.backgroundColor = ' #695046';}
+    if(skinColorSlider.value == 17) {document.getElementById("characterImage").style.backgroundColor = ' #5a453c';}
+    if(skinColorSlider.value == 18) {document.getElementById("characterImage").style.backgroundColor = ' #4b3932';}
+    if(skinColorSlider.value == 19) {document.getElementById("characterImage").style.backgroundColor = ' #593b2b';}
+    if(skinColorSlider.value == 20) {document.getElementById("characterImage").style.backgroundColor = ' #3c2e28';}
 }
 
-let screen1_height;
-let screen1_width;
-let screen1_img;
-let screen1_skincolor;
-
 function saveValues(){
-    screen1_height = document.getElementById("characterbox").style.height;
-   // screen1_boxwidth = document.getElementById("characterbox").style.width;
-    screen1_width = document.getElementById("characterImage").style.width;
-    screen1_img = document.getElementById("characterImage").src;
-    screen1_marginTOP = document.getElementById("characterbox").style.marginTop;
-    screen1_marginLEFT = document.getElementById("characterImage").style.marginLeft;
-    screen1_skincolor = document.getElementById("characterImage").style.backgroundColor;
+    sessionStorage.setItem("screen1Height", document.getElementById("characterbox").style.height);
+    sessionStorage.setItem("screen1marginTOP", document.getElementById("characterbox").style.marginTop);
+    sessionStorage.setItem("screen1marginLEFT", document.getElementById("characterImage").style.marginLeft);
+    sessionStorage.setItem("screen1Width", document.getElementById("characterImage").style.width);
+    sessionStorage.setItem("screen1Img", document.getElementById("characterImage").src);
+    sessionStorage.setItem("screen1Skincolor", document.getElementById("characterImage").style.backgroundColor);
+    sessionStorage.setItem("screen1Name", document.getElementById("nameField").value);
 
-    sessionStorage.setItem("screen1Height", screen1_height);
-    sessionStorage.setItem("screen1marginTOP", screen1_marginTOP);
-    sessionStorage.setItem("screen1marginLEFT", screen1_marginLEFT);
-    sessionStorage.setItem("screen1Width", screen1_width);
-    sessionStorage.setItem("screen1Img", screen1_img);
-    sessionStorage.setItem("screen1Skincolor", screen1_skincolor);
-
-    console.log("SAVED. height: " + screen1_height);
-    console.log("width:" + screen1_width);
-    console.log("src: " + screen1_img);
-    console.log("color " +screen1_skincolor);      
+    // console.log("SAVED. height: " + screen1_height);
+    // console.log("width:" + screen1_width);
+    // console.log("src: " + screen1_img);
+    // console.log("color " +screen1_skincolor);      
 }   
 
 function loadFaceScreen(){
@@ -187,4 +182,8 @@ function loadFaceScreen(){
     charBox.style.marginTop = sessionStorage.getItem('screen1marginTOP');
     charImg.style.marginLeft = sessionStorage.getItem('screen1marginLEFT');
     charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor');      
+}
+
+function loadfinalScreen() {
+    document.getElementById("nameTag").innerHTML = sessionStorage.getItem('screen1Name');
 }
