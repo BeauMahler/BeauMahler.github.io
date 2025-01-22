@@ -156,7 +156,8 @@ function saveValues(){
     sessionStorage.setItem("screen1Height", document.getElementById("characterbox").style.height);
     sessionStorage.setItem("screen1marginTOP", document.getElementById("characterbox").style.marginTop);
     sessionStorage.setItem("screen1marginLEFT", document.getElementById("characterImage").style.marginLeft);
-    sessionStorage.setItem("screen1Width", document.getElementById("characterImage").style.width);
+    sessionStorage.setItem("screen1WidthImg", document.getElementById("characterImage").style.width);
+    sessionStorage.setItem("screen1WidthBox", document.getElementById("characterbox").style.width);
     sessionStorage.setItem("screen1Img", document.getElementById("characterImage").src);
     sessionStorage.setItem("screen1Skincolor", document.getElementById("characterImage").style.backgroundColor);
     sessionStorage.setItem("screen1Name", document.getElementById("nameField").value);
@@ -177,7 +178,8 @@ function loadFaceScreen(){
     var charImg = document.getElementById("characterImage2");
 
     charBox.style.height = sessionStorage.getItem('screen1Height');
-    charImg.style.width = sessionStorage.getItem('screen1Width');
+    charBox.style.width = sessionStorage.getItem('screen1WidthBox');
+    charImg.style.width = sessionStorage.getItem('screen1WidthImg');
     charImg.src = sessionStorage.getItem('screen1Img');
     charBox.style.marginTop = sessionStorage.getItem('screen1marginTOP');
     charImg.style.marginLeft = sessionStorage.getItem('screen1marginLEFT');
@@ -186,4 +188,52 @@ function loadFaceScreen(){
 
 function loadfinalScreen() {
     document.getElementById("nameTag").innerHTML = sessionStorage.getItem('screen1Name');
+}
+
+
+const addStyles = (el, styles) => Object.assign(el.style, styles);
+
+function eyesChosen(eyeNumber){
+    var charBox = document.getElementById("characterbox2");
+    var charImg = document.getElementById("characterImage2");
+    var topImg = document.getElementById("overlayImg");
+    var topImg2 = document.getElementById("overlayImg2");
+    if(eyeNumber == 1){
+        topImg.src = "images/TEST.png";
+        topImg2.src = "images/TEST.png";
+    }
+    var absoluteX1 = 465 / 2 - 30;
+    var absoluteX2 = 465 / 2 ;
+    var absoluteY = parseInt(charBox.style.height) / 5;
+    // console.log(sessionStorage.getItem('screen1WidthImg'));
+    // topImg.style.position = "absolute";
+
+    // topImg.style.top = absoluteY + "px";
+    // topImg.style.height = "15px";
+    // topImg.style.width = "15px";
+
+    addStyles(topImg, {
+        position: "absolute",
+        top: absoluteY + "px",
+        left: absoluteX1 + "px",
+        height: "20px",
+        width: "20px"
+    });
+
+    addStyles(topImg2, {
+        position: "absolute",
+        top: absoluteY + "px",
+        left: absoluteX2 + "px",
+        height: "20px",
+        width: "20px"
+    });
+    // .position = ;
+    // topImg2.style.top = absoluteY + "px";
+    // topImg2.style.height = "15px";
+    // topImg2.style.width = "15px";
+    // topImg.style.zIndex = 1;
+}
+
+function changeEyeColor() {
+    document.getElementById("overlayImg").style.backgroundColor = "green";
 }

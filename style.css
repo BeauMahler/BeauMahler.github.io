@@ -30,6 +30,7 @@ body {
     margin-top: 25px;
     float:left;
     overflow: hidden;
+    position: relative;
 }
 #menubox{
     width: 465px; 
@@ -94,3 +95,11 @@ body {
     color: black;
 }
 
+
+.eyesButtons {
+    padding: 10px;
+}
+#overlayImg {
+    height: 15px;
+    width: 15px;
+}
