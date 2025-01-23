@@ -60,6 +60,7 @@ function heightChanged(){
 function weightChanged(){
     var newWeightSliderValue = document.getElementById("weightSlider").value;
     var currentWeight = document.getElementById("characterImage").clientWidth;
+    var currentBoxWeight = document.getElementById("characterbox").clientWidth;
 
     if(newWeightSliderValue > currentWeightSliderValue) { //fatter 
         var difference = newWeightSliderValue - currentWeightSliderValue; //steps
@@ -67,7 +68,7 @@ function weightChanged(){
         document.getElementById("characterImage").style.width = currentWeight + 75*difference + "px"; //set new weight
 
         var newWidth = parseInt(document.getElementById("characterImage").style.width);
-        newMarginLEFT = (-newWidth/2)+465/2;
+        newMarginLEFT = (-newWidth/2)+parseInt(currentBoxWeight)/2;
 
         document.getElementById("characterImage").style.marginLeft = newMarginLEFT + "px"; //set new margin       
     }
@@ -77,7 +78,7 @@ function weightChanged(){
         document.getElementById("characterImage").style.width = currentWeight - 75*difference + "px"; //set new weight
 
         var newWidth = parseInt(document.getElementById("characterImage").style.width);
-        newMarginLEFT = (-newWidth/2)+465/2;
+        newMarginLEFT = (-newWidth/2)+parseInt(currentBoxWeight)/2;
 
         document.getElementById("characterImage").style.marginLeft = newMarginLEFT + "px"; //set new margin
     }

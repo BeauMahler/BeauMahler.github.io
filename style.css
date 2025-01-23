@@ -23,7 +23,8 @@ body {
 }
 
 #characterbox, #characterbox2, #characterbox3, #characterbox4{
-    width: 465px; 
+    /* width: 465px;  */
+    width: 40%;
     /* height: 650px; */
     border: 2px solid;
     margin-left: 50px;
@@ -33,7 +34,8 @@ body {
     position: relative;
 }
 #menubox{
-    width: 465px; 
+    /* width: 465px;  */
+    width: 45%;
     height: 650px;
     margin-right: 50px;
     border:2px solid;
@@ -113,11 +115,9 @@ body {
     padding: 2px;
 }
 
-
 .buttonText {
     color: black;
 }
-
 
 button {
     padding: 5px;
