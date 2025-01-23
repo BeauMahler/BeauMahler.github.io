@@ -26,6 +26,27 @@
                 <div class="slidecontainer">
                     <label for="skinColor">Skin Color:</label> <input type="range" min="1" max="20" value="10" class="slider" id="skinColorSlider" oninput="skinColorChanged()">
                 </div>
+                <div id="disabilitySection">
+                    <p class="sectionHeading">Physical disabilities</p> 
+                    <input type="radio" name="disabilityButton" id="none" checked="checked" onclick="disabilitySelected()"/>None
+                    <input type="radio" name="disabilityButton" id="lowVision" onclick="disabilitySelected()"/>Low-vision
+                    <input type="radio" name="disabilityButton" id="blind" onclick="disabilitySelected()"/>Blind
+                    <input type="radio" name="disabilityButton" id="lowHearing" onclick="disabilitySelected()"/>Low-hearing
+                    <input type="radio" name="disabilityButton" id="deaf" onclick="disabilitySelected()"/>Deaf
+                    <input type="radio" name="disabilityButton" id="dwarfism" onclick="disabilitySelected()"/>Dwarfism
+                    <input type="radio" name="disabilityButton" id="amputationArm" onclick="disabilitySelected()"/>Amputated arm
+                    <input type="radio" name="disabilityButton" id="amputationLeg" onclick="disabilitySelected()"/>Amputated leg
+                    <input type="radio" name="disabilityButton" id="paralysis" onclick="disabilitySelected()"/>Paralysis
+                </div>
+                <div id="helpingAidsSection">
+                    <p class="sectionHeading">Helping aids</p>
+                    <label id="caneLabel"><input type="checkbox" id="helpingAidCane">Cane</label>
+                    <label id="glassesLabel"><input type="checkbox" id="helpingAidGlasses">Tinted glasses</label>
+                    <label id="hearingLabel"><input type="checkbox" id="helpingAidHearingAids">Hearing aids</label>
+                    <label id="prostheticLabel"><input type="checkbox" id="helpingAidProsthetic">Prosthetic</label>
+                    <label id="wheelchairLabel"><input type="checkbox" id="helpingAidWheelchair">Wheelchair</label>
+                </div><br>
+
                 <label for="Name">Name:</label> <input type="text" placeholder="Name" id="nameField">
                 <br>
                 <button onclick="saveValues()" class="nextButton"><a href="./FaceScreen.html" class="buttonText">Next Screen</a></button>

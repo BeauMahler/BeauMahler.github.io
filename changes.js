@@ -237,3 +237,26 @@ function eyesChosen(eyeNumber){
 function changeEyeColor() {
     document.getElementById("overlayImg").style.backgroundColor = "green";
 }
+
+
+function disabilitySelected(){
+    var helpingAidsSection = document.getElementById("helpingAidsSection");
+    // var helpingAidGlasses = document.getElementById("helpingAidGlasses");
+    // var helpingAidCane = document.getElementById("helpingAidCane");
+    // var helpingAidHearingAids = document.getElementById("helpingAidHearingAids");
+    // var helpingAidProsthetic = document.getElementById("helpingAidProsthetic");
+    // var helpingAidWheelchair = document.getElementById("helpingAidWheelchair");
+    var caneLabel = document.getElementById("caneLabel");
+    var glassesLabel = document.getElementById("glassesLabel");
+    var hearingLabel = document.getElementById("hearingLabel");
+    var prostheticLabel = document.getElementById("prostheticLabel");
+    var wheelchairLabel = document.getElementById("wheelchairLabel");
+
+    document.getElementById("none").checked ? helpingAidsSection.style.display = "none" : helpingAidsSection.style.display = "block";
+
+    (document.getElementById("lowVision").checked || document.getElementById("blind").checked) ? glassesLabel.style.display = "block" : glassesLabel.style.display = "none";
+    (document.getElementById("lowVision").checked || document.getElementById("blind").checked) ? caneLabel.style.display = "block" : caneLabel.style.display = "none";
+    (document.getElementById("lowHearing").checked || document.getElementById("deaf").checked) ? hearingLabel.style.display = "block" : hearingLabel.style.display = "none";
+    (document.getElementById("amputationArm").checked || document.getElementById("amputationLeg").checked) ? prostheticLabel.style.display = "block" : prostheticLabel.style.display = "none";
+    (document.getElementById("amputationLeg").checked || document.getElementById("dwarfism").checked || document.getElementById("paralysis").checked) ? wheelchairLabel.style.display = "block" : wheelchairLabel.style.display = "none";
+}

@@ -91,6 +91,24 @@ body {
     position: absolute;
 }
 
+#disabilitySection, #helpingAidsSection{
+    width:100%;
+    position: relative;
+    align-content: center;
+    text-align: center;
+}
+.sectionHeading{
+    margin:auto;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+}
+#helpingAidsSection, #caneLabel, #glassesLabel, #hearingLabel, #prostheticLabel, #wheelchairLabel{
+    display: none;
+    margin: auto;
+}
+
+
 .buttonText {
     color: black;
 }
