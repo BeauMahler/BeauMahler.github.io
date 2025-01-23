@@ -9,23 +9,6 @@
         <div id="main">
             <div id="characterbox"><img id="characterImage" src="images/prototype_character_MAIN_neutral.png"/></div>
             <div id="menubox">
-                <div><label for="bodyTypes">Body Type:</label>
-                    <button onclick="masculineBodyType()">MASCULINE</button>
-                    <button onclick="feminineBodyType()">FEMININE</button>
-                    <button onclick="neutralBodyType()">NEUTRAL</button>
-                </div>
-                <div class="slidecontainer">
-                    <label for="height">Height:</label> <input type="range" min="1" max="7" value="4" class="slider" id="heightSlider" oninput="heightChanged()">
-                </div>
-                <div class="slidecontainer">
-                    <label for="weight">Weight:</label> <input type="range" min="1" max="9" value="5" class="slider" id="weightSlider" oninput="weightChanged()">
-                </div>
-                <div class="slidecontainer">
-                    <label for="muscles">Muscles:</label> <input type="range" min="1" max="3" value="1" class="slider" id="muscleSlider" oninput="musclesChanged()">
-                </div>
-                <div class="slidecontainer">
-                    <label for="skinColor">Skin Color:</label> <input type="range" min="1" max="20" value="10" class="slider" id="skinColorSlider" oninput="skinColorChanged()">
-                </div>
                 <div id="disabilitySection">
                     <p class="sectionHeading">Physical disabilities</p> 
                     <input type="radio" name="disabilityButton" id="none" checked="checked" onclick="disabilitySelected()"/>None
@@ -45,8 +28,28 @@
                     <label id="hearingLabel"><input type="checkbox" id="helpingAidHearingAids">Hearing aids</label>
                     <label id="prostheticLabel"><input type="checkbox" id="helpingAidProsthetic">Prosthetic</label>
                     <label id="wheelchairLabel"><input type="checkbox" id="helpingAidWheelchair">Wheelchair</label>
-                </div><br>
+                </div>
+                <br>
+                <div><label for="bodyTypes">Body Type:</label><br>
+                    <button onclick="masculineBodyType()">MASCULINE</button>
+                    <button onclick="feminineBodyType()">FEMININE</button>
+                    <button onclick="neutralBodyType()">NEUTRAL</button>
+                </div>
+                <br>
+                <div class="slidecontainer">
+                    <label for="height">Height:</label><br> <input type="range" min="1" max="7" value="4" class="slider" id="heightSlider" oninput="heightChanged()">
+                </div>
+                <div class="slidecontainer">
+                    <label for="weight">Weight:</label><br> <input type="range" min="1" max="9" value="5" class="slider" id="weightSlider" oninput="weightChanged()">
+                </div>
+                <div class="slidecontainer">
+                    <label for="muscles">Muscles:</label><br> <input type="range" min="1" max="3" value="1" class="slider" id="muscleSlider" oninput="musclesChanged()">
+                </div>
+                <div class="slidecontainer">
+                    <label for="skinColor">Skin Color:</label><br> <input type="range" min="1" max="20" value="10" class="slider" id="skinColorSlider" oninput="skinColorChanged()">
+                </div>
 
+                <br>
                 <label for="Name">Name:</label> <input type="text" placeholder="Name" id="nameField">
                 <br>
                 <button onclick="saveValues()" class="nextButton"><a href="./FaceScreen.html" class="buttonText">Next Screen</a></button>

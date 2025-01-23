@@ -40,6 +40,8 @@ body {
     margin-top: 25px;
     float:right;
     position: relative;
+    /* align-content: center; */
+    text-align: center;
 }
 
 #characterbox img , #characterbox2 img, #characterbox3 img, #characterbox4 img, #characterbox5 img {
@@ -106,6 +108,9 @@ body {
 #helpingAidsSection, #caneLabel, #glassesLabel, #hearingLabel, #prostheticLabel, #wheelchairLabel{
     display: none;
     margin: auto;
+    font-size: 17px;
+    font-weight: initial;
+    padding: 2px;
 }
 
 
@@ -114,10 +119,17 @@ body {
 }
 
 
-.eyesButtons {
-    padding: 10px;
+button {
+    padding: 5px;
+    margin-top: 10px;
 }
 #overlayImg {
     height: 15px;
     width: 15px;
+}
+label {
+    margin:auto;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
 }
