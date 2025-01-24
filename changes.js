@@ -1,32 +1,81 @@
 function init(){
     document.getElementById("characterbox").style.height = "650px";
+    document.getElementById("muscleSliderDiv").style.display = "block";
     heightChanged();
 }
 
 var currentBodyType = "neutral"; //init
 
+//amputation
+var amputatedArmNoProsthetic = false;
+var amputatedLegNoProsthetic = false;
+var amputatedArmWithProsthetic = false;
+var amputatedLegWithProsthetic = false;
+//low vision & blind
+var blindNoGlassesNoCane = false;
+var blindWithGlassesNoCane = false;
+var blindNoGlassesWithCane = false;
+//low hearing & deaf
+var deafNoHearingAids = false;
+var deafWithHearingAids = false;
+//dwarfism
+var dwarfismNoWheelchair = false;
+var paralysisNoWheelchair = false;
+
 function masculineBodyType(){
-    currentBodyType = "masculine";
-    var muscles = document.getElementById("muscleSlider").value;
-    if(muscles == 1) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_masculine.png";}
-    else if(muscles == 2) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_masculine_M2.png";}
-    else {document.getElementById("characterImage").src = "images/prototype_character_MAIN_masculine_M3.png";}
+    //set var to masculine
+    currentBodyType = "masculine";    
+    var charImg = document.getElementById("characterImage");
+    //if muscles can appear (no disabilities)
+    if(document.getElementById("muscleSliderDiv").style.display == "block"){
+        var muscles = document.getElementById("muscleSlider").value;
+        if(muscles == 1) {charImg.src = "images/MAIN/character_masculine.png";}
+        else if(muscles == 2) {charImg.src = "images/Muscles/character_masculine_muscle2.png";}
+        else {charImg.src = "images/Muscles/character_masculine_muscle3.png";}
+    }
+    //disabilities present
+    if(amputatedArmNoProsthetic){charImg.src="images/Amputation/character_masculine_amputatedArm.png"}
+    if(amputatedArmWithProsthetic){charImg.src="images/Amputation/character_masculine_amputatedArm_prosthetic.png"}
+    if(amputatedLegNoProsthetic){charImg.src="images/Amputation/character_masculine_amputatedLeg.png"}
+    if(amputatedLegWithProsthetic){charImg.src="images/Amputation/character_masculine_amputatedLeg_prosthetic.png"}
 }
 
 function feminineBodyType(){
+    //set var to neutral
     currentBodyType = "feminine";
-    var muscles = document.getElementById("muscleSlider").value;
-    if(muscles == 1) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_Feminine.png";}
-    else if(muscles == 2) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_Feminine_M2.png";}
-    else {document.getElementById("characterImage").src = "images/prototype_character_MAIN_Feminine_M3.png";}
+    var charImg = document.getElementById("characterImage");
+    //if muscles can appear (no disabilities)
+   // if(document.getElementById("muscleSliderDiv").style.display == "block"){
+        var muscles = document.getElementById("muscleSlider").value;
+        if(muscles == 1) {charImg.src = "images/MAIN/character_feminine.png";}
+        else if(muscles == 2) {charImg.src = "images/Muscles/character_feminine_muscle2.png";}
+        else {charImg.src = "images/Muscles/character_feminine_muscle3.png";}
+   // }
+    //disabilities present
+    if(amputatedArmNoProsthetic){charImg.src="images/Amputation/character_Feminine_amputatedArm.png"}
+    if(amputatedArmWithProsthetic){charImg.src="images/Amputation/character_Feminine_amputatedArm_prosthetic.png"}
+    if(amputatedLegNoProsthetic){charImg.src="images/Amputation/character_Feminine_amputatedLeg.png"}
+    if(amputatedLegWithProsthetic){charImg.src="images/Amputation/character_Feminine_amputatedLeg_prosthetic.png"}
+    
 }
 
 function neutralBodyType(){
+    //set var to neutral
     currentBodyType = "neutral";
-    var muscles = document.getElementById("muscleSlider").value;
-    if(muscles == 1) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_neutral.png";}
-    else if(muscles == 2) {document.getElementById("characterImage").src = "images/prototype_character_MAIN_neutral_M2.png";}
-    else {document.getElementById("characterImage").src = "images/prototype_character_MAIN_neutral_M3.png";}
+    var charImg = document.getElementById("characterImage");
+    //if muscles can appear (no disabilities)
+    if(document.getElementById("muscleSliderDiv").style.display == "block"){
+        var muscles = document.getElementById("muscleSlider").value;
+        if(muscles == 1) {charImg.src = "images/MAIN/character_neutral.png";}
+        else if(muscles == 2) {charImg.src = "images/Muscles/character_neutral_muscle2.png";}
+        else {charImg.src = "images/Muscles/character_neutral_muscle3.png";}
+    }
+    //disabilities present
+    if(amputatedArmNoProsthetic){charImg.src="images/Amputation/character_neutral_amputatedArm.png"}
+    if(amputatedArmWithProsthetic){charImg.src="images/Amputation/character_neutral_amputatedArm_prosthetic.png"}
+    if(amputatedLegNoProsthetic){charImg.src="images/Amputation/character_neutral_amputatedLeg.png"}
+    if(amputatedLegWithProsthetic){charImg.src="images/Amputation/character_neutral_amputatedLeg_prosthetic.png"}
+
 }
 
 var currentHeightSliderValue = 7;
@@ -241,23 +290,97 @@ function changeEyeColor() {
 
 
 function disabilitySelected(){
+    //helper variables
     var helpingAidsSection = document.getElementById("helpingAidsSection");
-    // var helpingAidGlasses = document.getElementById("helpingAidGlasses");
-    // var helpingAidCane = document.getElementById("helpingAidCane");
-    // var helpingAidHearingAids = document.getElementById("helpingAidHearingAids");
-    // var helpingAidProsthetic = document.getElementById("helpingAidProsthetic");
-    // var helpingAidWheelchair = document.getElementById("helpingAidWheelchair");
+    var muscleSliderDiv = document.getElementById("muscleSliderDiv");
+    var bodyTypeDiv = document.getElementById("bodyTypeDiv");
+        //helping aids checkboxes
+    var helpingAidGlasses = document.getElementById("helpingAidGlasses");
+    var helpingAidCane = document.getElementById("helpingAidCane");
+    var helpingAidHearingAids = document.getElementById("helpingAidHearingAids");
+    var helpingAidProsthetic = document.getElementById("helpingAidProsthetic");
+    var helpingAidWheelchair = document.getElementById("helpingAidWheelchair");
+        //disability checkboxes
     var caneLabel = document.getElementById("caneLabel");
     var glassesLabel = document.getElementById("glassesLabel");
     var hearingLabel = document.getElementById("hearingLabel");
     var prostheticLabel = document.getElementById("prostheticLabel");
     var wheelchairLabel = document.getElementById("wheelchairLabel");
+    var charImage = document.getElementById("characterImage");
 
+    //change menu
     document.getElementById("none").checked ? helpingAidsSection.style.display = "none" : helpingAidsSection.style.display = "block";
+    document.getElementById("none").checked ? muscleSliderDiv.style.display = "block" : muscleSliderDiv.style.display = "none";
 
     (document.getElementById("lowVision").checked || document.getElementById("blind").checked) ? glassesLabel.style.display = "block" : glassesLabel.style.display = "none";
     (document.getElementById("lowVision").checked || document.getElementById("blind").checked) ? caneLabel.style.display = "block" : caneLabel.style.display = "none";
     (document.getElementById("lowHearing").checked || document.getElementById("deaf").checked) ? hearingLabel.style.display = "block" : hearingLabel.style.display = "none";
     (document.getElementById("amputationArm").checked || document.getElementById("amputationLeg").checked) ? prostheticLabel.style.display = "block" : prostheticLabel.style.display = "none";
     (document.getElementById("amputationLeg").checked || document.getElementById("dwarfism").checked || document.getElementById("paralysis").checked) ? wheelchairLabel.style.display = "block" : wheelchairLabel.style.display = "none";
+
+    helpingAidWheelchair.checked ? bodyTypeDiv.style.display = "none" : bodyTypeDiv.style.display = "block";
+
+    //change to correct images
+    if(document.getElementById("amputationArm").checked){ //amputated arm
+        resetValues();
+        //set & update disability variables
+        if(helpingAidProsthetic.checked){amputatedArmWithProsthetic = true} 
+        else {amputatedArmWithProsthetic = false; amputatedArmNoProsthetic = true;}
+    } 
+    if(document.getElementById("amputationLeg").checked){ //amputated arm
+        resetValues();
+        //set & update disability variables
+        if(helpingAidProsthetic.checked){amputatedLegWithProsthetic = true} 
+        else {amputatedLegWithProsthetic = false; amputatedLegNoProsthetic = true;}
+    } 
+    if(document.getElementById("none").checked){ resetValues();} 
+
+    if(currentBodyType == "neutral"){neutralBodyType();} else if(currentBodyType == "feminine"){feminineBodyType();}else{masculineBodyType();} //call body type functions
+
+
+
+//     //amputation
+// const amputatedArmNoProsthetic = false;
+// const amputatedLegNoProsthetic = false;
+// const amputatedArmWithProsthetic = false;
+// const amputatedLegWithProsthetic = false;
+// //low vision & blind
+// const blindNoGlassesNoCane = false;
+// const blindWithGlassesNoCane = false;
+// const blindNoGlassesWithCane = false;
+// //low hearing & deaf
+// const deafNoHearingAids = false;
+// const deafWithHearingAids = false;
+// //dwarfism
+// const dwarfismNoWheelchair = false;
+// const paralysisNoWheelchair = false;
 }
+
+function resetValues() {
+    //reset disability variable values
+    amputatedArmNoProsthetic = false; 
+    amputatedArmWithProsthetic = false; 
+    amputatedLegNoProsthetic = false; 
+    amputatedLegWithProsthetic = false; 
+    blindNoGlassesNoCane = false;
+    blindWithGlassesNoCane = false;
+    blindNoGlassesWithCane = false;
+    deafNoHearingAids = false;
+    deafWithHearingAids = false;
+    dwarfismNoWheelchair = false;
+    paralysisNoWheelchair = false;
+}
+
+
+// function helpingAidsSelected(){
+//     var bodyTypeDiv = document.getElementById("bodyTypeDiv");
+//     //helping aids checkboxes
+//     var helpingAidGlasses = document.getElementById("helpingAidGlasses");
+//     var helpingAidCane = document.getElementById("helpingAidCane");
+//     var helpingAidHearingAids = document.getElementById("helpingAidHearingAids");
+//     var helpingAidProsthetic = document.getElementById("helpingAidProsthetic");
+//     var helpingAidWheelchair = document.getElementById("helpingAidWheelchair");
+
+//     helpingAidWheelchair.checked ? bodyTypeDiv.style.display = "none" : bodyTypeDiv.style.display = "block";
+
+// }

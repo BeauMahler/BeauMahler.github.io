@@ -7,7 +7,7 @@
     </head>
     <body onload = "init()">
         <div id="main">
-            <div id="characterbox"><img id="characterImage" src="images/prototype_character_MAIN_neutral.png"/></div>
+            <div id="characterbox"><img id="characterImage" src="images/MAIN/character_neutral.png"/></div>
             <div id="menubox">
                 <div id="disabilitySection">
                     <p class="sectionHeading">Physical disabilities</p> 
@@ -23,14 +23,14 @@
                 </div>
                 <div id="helpingAidsSection">
                     <p class="sectionHeading">Helping aids</p>
-                    <label id="caneLabel"><input type="checkbox" id="helpingAidCane">Cane</label>
-                    <label id="glassesLabel"><input type="checkbox" id="helpingAidGlasses">Tinted glasses</label>
-                    <label id="hearingLabel"><input type="checkbox" id="helpingAidHearingAids">Hearing aids</label>
-                    <label id="prostheticLabel"><input type="checkbox" id="helpingAidProsthetic">Prosthetic</label>
-                    <label id="wheelchairLabel"><input type="checkbox" id="helpingAidWheelchair">Wheelchair</label>
+                    <label id="caneLabel"><input type="checkbox" id="helpingAidCane" onclick="disabilitySelected()">Cane</label>
+                    <label id="glassesLabel"><input type="checkbox" id="helpingAidGlasses" onclick="disabilitySelected()">Tinted glasses</label>
+                    <label id="hearingLabel"><input type="checkbox" id="helpingAidHearingAids" onclick="disabilitySelected()">Hearing aids</label>
+                    <label id="prostheticLabel"><input type="checkbox" id="helpingAidProsthetic" onclick="disabilitySelected()">Prosthetic</label>
+                    <label id="wheelchairLabel"><input type="checkbox" id="helpingAidWheelchair" onclick="disabilitySelected()">Wheelchair</label>
                 </div>
                 <br>
-                <div><label for="bodyTypes">Body Type:</label><br>
+                <div id="bodyTypeDiv"><label for="bodyTypes">Body Type:</label><br>
                     <button onclick="masculineBodyType()">MASCULINE</button>
                     <button onclick="feminineBodyType()">FEMININE</button>
                     <button onclick="neutralBodyType()">NEUTRAL</button>
@@ -42,7 +42,7 @@
                 <div class="slidecontainer">
                     <label for="weight">Weight:</label><br> <input type="range" min="1" max="9" value="5" class="slider" id="weightSlider" oninput="weightChanged()">
                 </div>
-                <div class="slidecontainer">
+                <div class="slidecontainer" id="muscleSliderDiv">
                     <label for="muscles">Muscles:</label><br> <input type="range" min="1" max="3" value="1" class="slider" id="muscleSlider" oninput="musclesChanged()">
                 </div>
                 <div class="slidecontainer">
