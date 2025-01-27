@@ -41,6 +41,12 @@ function masculineBodyType(){
     if(amputatedArmWithProsthetic){charImg.src="images/Amputation/character_masculine_amputatedArm_prosthetic.png"}
     if(amputatedLegNoProsthetic){charImg.src="images/Amputation/character_masculine_amputatedLeg.png"}
     if(amputatedLegWithProsthetic){charImg.src="images/Amputation/character_masculine_amputatedLeg_prosthetic.png"}
+    if(blindNoGlassesNoCane){charImg.src="images/LowVision/character_masculine_blind.png"}
+    if(blindWithGlassesNoCane){charImg.src="images/LowVision/character_masculine_glasses.png"}
+    if(blindNoGlassesWithCane){charImg.src="images/LowVision/character_masculine_cane.png"}
+    if(blindWithGlassesWithCane){charImg.src="images/LowVision/character_masculine_glasses_cane.png"}
+    if(deafNoHearingAids){charImg.src="images/MAIN/character_masculine.png";}
+    if(deafWithHearingAids){charImg.src="images/LowHearing/character_masculine_hearingAids.png"}
 
     (leftSideArm || leftSideLeg) ? charImg.style.transform = "scaleX(-1)" : charImg.style.transform = "none"; //flip image
 }
@@ -61,6 +67,12 @@ function feminineBodyType(){
     if(amputatedArmWithProsthetic){charImg.src="images/Amputation/character_Feminine_amputatedArm_prosthetic.png"}
     if(amputatedLegNoProsthetic){charImg.src="images/Amputation/character_Feminine_amputatedLeg.png"}
     if(amputatedLegWithProsthetic){charImg.src="images/Amputation/character_Feminine_amputatedLeg_prosthetic.png"}
+    if(blindNoGlassesNoCane){charImg.src="images/LowVision/character_feminine_blind.png"}
+    if(blindWithGlassesNoCane){charImg.src="images/LowVision/character_feminine_glasses.png"}
+    if(blindNoGlassesWithCane){charImg.src="images/LowVision/character_feminine_cane.png"}
+    if(blindWithGlassesWithCane){charImg.src="images/LowVision/character_feminine_glasses_cane.png"}
+    if(deafNoHearingAids){charImg.src="images/MAIN/character_feminine.png";}
+    if(deafWithHearingAids){charImg.src="images/LowHearing/character_feminine_hearingAids.png"}
 
     (leftSideArm || leftSideLeg) ? charImg.style.transform = "scaleX(-1)" : charImg.style.transform = "none"; //flip image
 }
@@ -85,6 +97,8 @@ function neutralBodyType(){
     if(blindWithGlassesNoCane){charImg.src="images/LowVision/character_neutral_glasses.png"}
     if(blindNoGlassesWithCane){charImg.src="images/LowVision/character_neutral_cane.png"}
     if(blindWithGlassesWithCane){charImg.src="images/LowVision/character_neutral_glasses_cane.png"}
+    if(deafNoHearingAids){charImg.src="images/MAIN/character_neutral.png";}
+    if(deafWithHearingAids){charImg.src="images/LowHearing/character_neutral_hearingAids.png"}
 
     (leftSideArm || leftSideLeg) ? charImg.style.transform = "scaleX(-1)" : charImg.style.transform = "none"; //flip image
 }
@@ -149,7 +163,13 @@ function disabilitySelected(){
         if(helpingAidCane.checked && helpingAidGlasses.checked){blindWithGlassesWithCane = true;} 
         else if(helpingAidCane.checked){blindNoGlassesWithCane = true;}
         else if(helpingAidGlasses.checked){blindWithGlassesNoCane = true;}
-        else {blindNoGlassesNoCane = true;} //do nothing
+        else {blindNoGlassesNoCane = true;} 
+    } 
+    if(document.getElementById("lowHearing").checked || document.getElementById("deaf").checked){ //amputated leg
+        resetValues();
+        //set & update disability variables
+        if(helpingAidHearingAids.checked){deafWithHearingAids = true;} 
+        else {deafNoHearingAids = true;}
     } 
     if(document.getElementById("none").checked){ resetValues();} 
 
