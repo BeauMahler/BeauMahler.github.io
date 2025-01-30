@@ -96,7 +96,7 @@ body {
     position: absolute;
 }
 
-#disabilitySection, #helpingAidsSection{
+#disabilitySection{
     width:100%;
     position: relative;
     align-content: center;
@@ -106,14 +106,51 @@ body {
     margin:auto;
     font-weight: bold;
     font-size: 20px;
-    padding: 10px;
+    padding: 5px;
 }
-#helpingAidsSection, #caneLabel, #glassesLabel, #hearingLabel, #prostheticLabel, #wheelchairLabel{
+
+#disSection {
     display: none;
     margin: auto;
+    padding: 2px;
+    text-align: center;
+    position: relative;
+}
+#helpingAidsSection, #superpowerSection {
+    width: 40%;
+    height: 90px;
+    margin: 10px;
+    align-items: center;
+    align-content: center;
+}
+#helpingAidsSection {
+    float: left;
+    border:2px solid;
+    margin-left: 5%;
+
+}
+#superpowerSection {
+    margin-right: 5%;
+    float: right;
+    border:2px solid; 
+}
+
+#caneLabel, #glassesLabel, #hearingLabel, #prostheticLabel, #wheelchairLabel{
+    /* display: none; */
+    /* margin: auto; */
     font-size: 17px;
     font-weight: initial;
     padding: 2px;
+    /* position: relative; */
+}
+
+#blindSuperpowerLabel, #deafSuperpowerLabel, #amputationSuperpowerLabel, #paralysisSuperpowerLabel, #dwarfismSuperpowerLabel {
+    /* display: none; */
+    /* margin: auto; */
+    font-size: 17px;
+    font-weight: initial;
+    padding: 2px;
+    /* position: relative; */
 }
 
 .buttonText {

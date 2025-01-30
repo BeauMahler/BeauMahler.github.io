@@ -130,13 +130,23 @@ function neutralBodyType(){
     //(leftSideArm || leftSideLeg) ? charImg.style.transform = "scaleX(-1)" : charImg.style.transform = "none"; //flip image
 }
 
+function superpowerSelected() {
+
+
+    if(blindNoGlassesNoCane || blindNoGlassesWithCane || blindWithGlassesNoCane || blindWithGlassesWithCane){ //blind
+        blindSuperpowerLabel.style.display = "block";
+    } else { blindSuperpowerLabel.style.display = "none";}
+}
+
 
 
 function disabilitySelected(){
     //helper variables
     var helpingAidsSection = document.getElementById("helpingAidsSection");
+    var superpowerSection = document.getElementById("superpowerSection");
+    var disSection = document.getElementById("disSection");
     var muscleSliderDiv = document.getElementById("muscleSliderDiv");
-    var bodyTypeDiv = document.getElementById("bodyTypeDiv");
+   // var bodyTypeDiv = document.getElementById("bodyTypeDiv");
         //helping aids checkboxes
     var helpingAidGlasses = document.getElementById("helpingAidGlasses");
     var helpingAidCane = document.getElementById("helpingAidCane");
@@ -150,24 +160,63 @@ function disabilitySelected(){
     var prostheticLabel = document.getElementById("prostheticLabel");
     var wheelchairLabel = document.getElementById("wheelchairLabel");
     var charImage = document.getElementById("characterImage");
+        //superpower checkboxes
+    var blindSuperpowerLabel = document.getElementById("blindSuperpowerLabel");
+    var deafSuperpowerLabel = document.getElementById("deafSuperpowerLabel");
+    var amputationSuperpowerLabel = document.getElementById("amputationSuperpowerLabel");
+    //var amputatedLegSuperpowerLabel = document.getElementById("amputatedLegSuperpowerLabel");
+    var dwarfismSuperpowerLabel = document.getElementById("dwarfismSuperpowerLabel");
+    var paralysisSuperpowerLabel = document.getElementById("paralysisSuperpowerLabel");
+
+    var lowVision = document.getElementById("lowVision");
+    var blind = document.getElementById("blind");
+    var lowHearing = document.getElementById("lowHearing");
+    var deaf = document.getElementById("deaf");
+    var dwarfism = document.getElementById("dwarfism");
+    var paralysis = document.getElementById("paralysis");
 
     //change menu
-    document.getElementById("none").checked ? helpingAidsSection.style.display = "none" : helpingAidsSection.style.display = "block";
+   // document.getElementById("none").checked ? helpingAidsSection.style.display = "none" : helpingAidsSection.style.display = "block";
+   // document.getElementById("none").checked ? superpowerSection.style.display = "none" : superpowerSection.style.display = "block";
+    document.getElementById("none").checked ? disSection.style.display = "none" : disSection.style.display = "block";
     document.getElementById("none").checked ? muscleSliderDiv.style.display = "block" : muscleSliderDiv.style.display = "none";
 
-    (document.getElementById("lowVision").checked || document.getElementById("blind").checked) ? glassesLabel.style.display = "block" : glassesLabel.style.display = "none";
-    (document.getElementById("lowVision").checked || document.getElementById("blind").checked) ? caneLabel.style.display = "block" : caneLabel.style.display = "none";
-    (document.getElementById("lowHearing").checked || document.getElementById("deaf").checked) ? hearingLabel.style.display = "block" : hearingLabel.style.display = "none";
-    (document.getElementById("amputationArmRight").checked || 
-        document.getElementById("amputationArmLeft").checked || 
-        document.getElementById("amputationLegRight").checked ||
-        document.getElementById("amputationLegLeft").checked) ? prostheticLabel.style.display = "block" : prostheticLabel.style.display = "none";
-    (document.getElementById("amputationLegRight").checked || 
-        document.getElementById("amputationLegLeft").checked || 
-        document.getElementById("dwarfism").checked || 
-        document.getElementById("paralysis").checked) ? wheelchairLabel.style.display = "block" : wheelchairLabel.style.display = "none";
-
-    //helpingAidWheelchair.checked ? bodyTypeDiv.style.display = "none" : bodyTypeDiv.style.display = "block";
+    if(lowVision.checked || blind.checked) {
+        glassesLabel.style.display = "block";
+        caneLabel.style.display = "block";
+        blindSuperpowerLabel.style.display = "block";
+    } else{ 
+        glassesLabel.style.display = "none"; 
+        caneLabel.style.display = "none";
+        blindSuperpowerLabel.style.display = "none";
+    }
+    if(lowHearing.checked || deaf.checked) {
+         hearingLabel.style.display = "block";
+         deafSuperpowerLabel.style.display = "block";
+    } else {
+        hearingLabel.style.display = "none";
+        deafSuperpowerLabel.style.display = "none";
+    } 
+    if(dwarfism.checked) {
+        dwarfismSuperpowerLabel.style.display = "block";
+    } else {
+        dwarfismSuperpowerLabel.style.display = "none";
+    }
+    if(paralysis.checked) {
+        paralysisSuperpowerLabel.style.display = "block";
+    } else {
+        paralysisSuperpowerLabel.style.display = "none";
+    }
+    if (document.getElementById("amputationArmRight").checked || document.getElementById("amputationArmLeft").checked || 
+        document.getElementById("amputationLegRight").checked || document.getElementById("amputationLegLeft").checked) { 
+            prostheticLabel.style.display = "block";
+            amputationSuperpowerLabel.style.display = "block"; 
+    } else { 
+        prostheticLabel.style.display = "none";
+        amputationSuperpowerLabel.style.display = "none";  
+    }
+    (document.getElementById("amputationLegRight").checked || document.getElementById("amputationLegLeft").checked || 
+        document.getElementById("dwarfism").checked || document.getElementById("paralysis").checked) ? wheelchairLabel.style.display = "block" : wheelchairLabel.style.display = "none";
 
     //change to correct images
     if(document.getElementById("amputationArmRight").checked || document.getElementById("amputationArmLeft").checked){ //amputated arm
@@ -186,7 +235,7 @@ function disabilitySelected(){
         else if(helpingAidProsthetic.checked){amputatedLegWithProsthetic = true;} 
         else {amputatedLegWithProsthetic = false; amputatedLegNoProsthetic = true;}
     } 
-    if(document.getElementById("lowVision").checked || document.getElementById("blind").checked){ //low vision
+    if(lowVision.checked || blind.checked){ //low vision
         resetValues();
         //set & update disability variables
         if(helpingAidCane.checked && helpingAidGlasses.checked){blindWithGlassesWithCane = true;} 
@@ -194,19 +243,19 @@ function disabilitySelected(){
         else if(helpingAidGlasses.checked){blindWithGlassesNoCane = true;}
         else {blindNoGlassesNoCane = true;} 
     } 
-    if(document.getElementById("lowHearing").checked || document.getElementById("deaf").checked){ //low hearing
+    if(lowHearing.checked || deaf.checked){ //low hearing
         resetValues();
         //set & update disability variables
         if(helpingAidHearingAids.checked){deafWithHearingAids = true;} 
         else {deafNoHearingAids = true;}
     } 
-    if(document.getElementById("dwarfism").checked){ //dwarfism
+    if(dwarfism.checked){ //dwarfism
         resetValues();
         //set & update disability variables
         if(helpingAidWheelchair.checked){dwarfismWithWheelchair = true;} 
         else {dwarfismNoWheelchair = true;}
     }
-    if(document.getElementById("paralysis").checked){ //dwarfism
+    if(paralysis.checked){ //dwarfism
         resetValues();
         //set & update disability variables
         if(helpingAidWheelchair.checked){paralysisWithWheelchair = true;} 

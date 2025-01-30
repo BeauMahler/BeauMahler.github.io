@@ -26,13 +26,24 @@
                     <input type="radio" name="disabilityButton" id="amputationLegLeft" onclick="disabilitySelected()"/>Amputated leg (left)
                     <input type="radio" name="disabilityButton" id="paralysis" onclick="disabilitySelected()"/>Paralysis
                 </div>
-                <div id="helpingAidsSection">
-                    <p class="sectionHeading">Helping aids</p>
-                    <label id="caneLabel"><input type="checkbox" id="helpingAidCane" onclick="disabilitySelected()">Cane</label>
-                    <label id="glassesLabel"><input type="checkbox" id="helpingAidGlasses" onclick="disabilitySelected()">Tinted glasses</label>
-                    <label id="hearingLabel"><input type="checkbox" id="helpingAidHearingAids" onclick="disabilitySelected()">Hearing aids</label>
-                    <label id="prostheticLabel"><input type="checkbox" id="helpingAidProsthetic" onclick="disabilitySelected()">Prosthetic</label>
-                    <label id="wheelchairLabel"><input type="checkbox" id="helpingAidWheelchair" onclick="disabilitySelected()">Wheelchair</label>
+                <div id="disSection">
+                    <div id="helpingAidsSection">
+                        <p class="sectionHeading">Helping aids</p>
+                        <label id="caneLabel"><input type="checkbox" id="helpingAidCane" onclick="disabilitySelected()">Cane</label>
+                        <label id="glassesLabel"><input type="checkbox" id="helpingAidGlasses" onclick="disabilitySelected()">Tinted glasses</label>
+                        <label id="hearingLabel"><input type="checkbox" id="helpingAidHearingAids" onclick="disabilitySelected()">Hearing aids</label>
+                        <label id="prostheticLabel"><input type="checkbox" id="helpingAidProsthetic" onclick="disabilitySelected()">Prosthetic</label>
+                        <label id="wheelchairLabel"><input type="checkbox" id="helpingAidWheelchair" onclick="disabilitySelected()">Wheelchair</label>
+                    </div>
+                    <div id="superpowerSection">
+                        <p class="sectionHeading">Superpowers</p>
+                        <label id="blindSuperpowerLabel"><input type="checkbox" id="superpowerBlind" onclick="superpowerSelected()">Cane Sword</label>
+                        <label id="deafSuperpowerLabel"><input type="checkbox" id="superpowerDeaf" onclick="superpowerSelected()">Night Vision</label>
+                        <label id="amputationSuperpowerLabel"><input type="checkbox" id="superpowerAmputation" onclick="superpowerSelected()">Blade</label>
+                        <!-- <label id="amputatedLegSuperpowerLabel"><input type="checkbox" id="superpowerAmputatedLeg" onclick="superpowerSelected()">Blade</label> -->
+                        <label id="dwarfismSuperpowerLabel"><input type="checkbox" id="superpowerDwarfism" onclick="superpowerSelected()">Super strength</label>
+                        <label id="paralysisSuperpowerLabel"><input type="checkbox" id="superpowerParalysis" onclick="superpowerSelected()">Telekinesis</label>
+                    </div>
                 </div>
                 <br>
                 <div id="bodyTypeDiv"><label for="bodyTypes">Body Type:</label><br>
