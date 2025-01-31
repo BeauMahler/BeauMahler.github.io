@@ -113,6 +113,7 @@ body {
     display: none;
     margin: auto;
     padding: 2px;
+    width:100%;
     text-align: center;
     position: relative;
 }
@@ -136,21 +137,15 @@ body {
 }
 
 #caneLabel, #glassesLabel, #hearingLabel, #prostheticLabel, #wheelchairLabel{
-    /* display: none; */
-    /* margin: auto; */
     font-size: 17px;
     font-weight: initial;
     padding: 2px;
-    /* position: relative; */
 }
 
 #blindSuperpowerLabel, #deafSuperpowerLabel, #amputationSuperpowerLabel, #paralysisSuperpowerLabel, #dwarfismSuperpowerLabel {
-    /* display: none; */
-    /* margin: auto; */
     font-size: 17px;
     font-weight: initial;
     padding: 2px;
-    /* position: relative; */
 }
 
 .buttonText {
