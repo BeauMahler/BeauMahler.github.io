@@ -493,7 +493,7 @@ function randomize(){
     var randomSkinColor = Math.floor(Math.random()*20+1);
     var randomBodyType = Math.floor(Math.random()*3+1);
     var disabilityOrNot = Math.floor(Math.random()*3);
-    var physicalDisability = 10;//Math.floor(Math.random()*10+1);
+    var physicalDisability = Math.floor(Math.random()*10+1);
 
     //update slider values
     document.getElementById("heightSlider").value = randomHeight;
