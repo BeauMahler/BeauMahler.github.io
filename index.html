@@ -12,7 +12,7 @@
             <!-- <i class="fas fa-deaf"></i><i class="fas fa-blind"></i> -->
             <div id="characterbox"><img id="characterImage" src="images/MAIN/character_neutral.png"/></div>
             <div id="menubox">
-                <div id="disabilitySection" onclick="uncheckSuperpowers()">
+                <div id="disabilitySection">
                     <p class="sectionHeading">Physical disabilities</p> 
                     <input type="radio" name="disabilityButton" id="none" checked="checked" onclick="disabilitySelected()"/>None
                     <input type="radio" name="disabilityButton" id="lowVision" onclick="disabilitySelected()"/>Low-vision
@@ -46,9 +46,9 @@
                 </div>
                 <br>
                 <div id="bodyTypeDiv"><label for="bodyTypes">Body Type:</label><br>
-                    <button onclick="masculineBodyType()">MASCULINE</button>
-                    <button onclick="feminineBodyType()">FEMININE</button>
-                    <button onclick="neutralBodyType()">NEUTRAL</button>
+                    <button id="masculineButton" onclick="masculineBodyType()">MASCULINE</button>
+                    <button id="feminineButton" onclick="feminineBodyType()">FEMININE</button>
+                    <button id="neutralButton" onclick="neutralBodyType()">NEUTRAL</button>
                 </div>
                 <br>
                 <div class="slidecontainer">

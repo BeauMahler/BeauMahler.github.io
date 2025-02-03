@@ -7,13 +7,34 @@
     </head>
     <body onload="loadFaceScreen()">
         <div id="main">
-            <div id="characterbox2"><img id="characterImage2" src="images/prototype_character_MAIN_neutral.png"/>
-                <img id="overlayImg"/>
-                <img id="overlayImg2"/>
-            </div>
+            <div id="characterbox2"><img id="characterImage2" src="images/prototype_character_MAIN_neutral.png"/></div>
             <div id="menubox">
-                <button class="eyesButtons" onclick="eyesChosen(1)"><img class='eyes' src="images/eyes1.png"/></button>
-                <button onclick="changeEyeColor()"></button>
+                <div><label for="eyes">Eyes:</label>
+                    <button class="faceOptionButton">Option A</button>
+                    <button class="faceOptionButton">Option B</button>
+                    <button class="faceOptionButton">Option C</button>
+                </div>
+                <div><label for="nose">Nose:</label>
+                    <button class="faceOptionButton">Option A</button>
+                    <button class="faceOptionButton">Option B</button>
+                    <button class="faceOptionButton">Option C</button>
+                </div>
+                <div><label for="mouth">Mouth:</label>
+                    <button class="faceOptionButton">Option A</button>
+                    <button class="faceOptionButton">Option B</button>
+                    <button class="faceOptionButton">Option C</button>
+                </div>
+                <div><label for="hairstyle">Hairstyle:</label>
+                    <button class="faceOptionButton">Option A</button>
+                    <button class="faceOptionButton">Option B</button>
+                    <button class="faceOptionButton">Option C</button>
+                </div>
+                <div><label for="haircolor">Haircolor:</label>
+                    <!-- // RGB sliders with some initial value -->
+                    <slider-color-picker mode="rgba" value="#FF55A7"><slider-color-picker>
+                </div>
+                
+                
                 <button class="previousButton"><a href="./index.html" class="buttonText">Previous Screen</a></button>
                 <button class="nextButton"><a href="./outfitScreen.html" class="buttonText">Next Screen</a></button>
             </div>

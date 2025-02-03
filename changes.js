@@ -2,6 +2,7 @@ function init(){
     document.getElementById("characterbox").style.height = "650px";
     document.getElementById("muscleSliderDiv").style.display = "block";
     heightChanged();
+    document.getElementById("neutralButton").style.border = "2px solid";
 }
 
 var currentBodyType = "neutral"; //init
@@ -40,6 +41,9 @@ var refreshImg = true;
 var refreshImg2 = true;
 
 function masculineBodyType(){
+    resetButtonBorders(); //remove borders
+    document.getElementById("masculineButton").style.border = "2px solid";
+
     //set var to masculine
     currentBodyType = "masculine";    
     var charImg = document.getElementById("characterImage");
@@ -84,6 +88,9 @@ function masculineBodyType(){
 }
 
 function feminineBodyType(){
+    resetButtonBorders(); //remove borders
+    document.getElementById("feminineButton").style.border = "2px solid";
+
     //set var to neutral
     currentBodyType = "feminine";
     var charImg = document.getElementById("characterImage");
@@ -130,6 +137,8 @@ function feminineBodyType(){
 }
 
 function neutralBodyType(){
+    resetButtonBorders(); //remove borders
+    document.getElementById("neutralButton").style.border = "2px solid";
     //set var to neutral
     currentBodyType = "neutral";
     var charImg = document.getElementById("characterImage");
@@ -182,6 +191,12 @@ function mirrorImage(charImg){
     } else {
         charImg.style.transform = "none";
     } 
+}
+
+function resetButtonBorders(){
+    document.getElementById("masculineButton").style.border = "none";
+    document.getElementById("feminineButton").style.border = "none";
+    document.getElementById("neutralButton").style.border = "none";
 }
 
 //check if superpower can be applied
@@ -264,6 +279,7 @@ function disabilitySelected(){
     var disSection = document.getElementById("disSection");
     var muscleSliderDiv = document.getElementById("muscleSliderDiv");
     var charImg = document.getElementById("characterImage");
+    var disabilitySection = document.getElementById("disabilitySection");
         //helping aids checkboxes
     var helpingAidGlasses = document.getElementById("helpingAidGlasses");
     var helpingAidCane = document.getElementById("helpingAidCane");
@@ -293,6 +309,11 @@ function disabilitySelected(){
     var amputationArmLeft = document.getElementById("amputationArmLeft");
     var amputationLegRight = document.getElementById("amputationLegRight");
     var amputationLegLeft = document.getElementById("amputationLegLeft");
+
+    disabilitySection.onclick = function(){
+        uncheckSuperpowers();
+        superpowerSelected();
+    };
 
     //change menu
     document.getElementById("none").checked ? disSection.style.display = "none" : disSection.style.display = "block";
