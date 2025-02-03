@@ -11,8 +11,9 @@
             <div id="characterbox2"><img id="characterImage2"/></div>
             <div id="menubox">
                 <br>
-                <p class="sectionHeading">Head options:</p><br>
+                <p class="sectionHeading">Head options</p><br>
                 <div><label for="eyes">Eyes:</label>
+                    <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
@@ -22,21 +23,24 @@
                     <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
                 </div>
                 <div><label for="nose">Nose:</label>
+                    <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
                 </div>
                 <div><label for="mouth">Mouth:</label>
+                    <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
                 </div>
                 <div><label for="mouth">Facial hair:</label>
-                    <button class="faceOptionButton">None</button>
-                    <button class="faceOptionButton">Mustache</button>
+                    <button class="faceOptionButton" onclick="mustacheClicked(false)">None</button>
+                    <button class="faceOptionButton" onclick="mustacheClicked(true)">Mustache</button>
                     <button class="faceOptionButton" disabled>Beard and mustache</button>
                 </div>
                 <div><label for="hairstyle">Hairstyle:</label>
+                    <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
@@ -46,21 +50,25 @@
                     <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
                 </div>
                 <div><label for="eyebrows">Eyebrows:</label>
+                    <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
                 </div>
                 <div><label for="ears">Ears:</label>
+                    <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
                 </div>
                 <div><label for="mouth">Freckles:</label>
+                    <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
                 </div>
                 <div><label for="facepresets">Presets:</label>
+                    <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>

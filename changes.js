@@ -280,6 +280,7 @@ function disabilitySelected(){
     var muscleSliderDiv = document.getElementById("muscleSliderDiv");
     var charImg = document.getElementById("characterImage");
     var disabilitySection = document.getElementById("disabilitySection");
+    var randomizeButton = document.getElementById("randomizeButton");
         //helping aids checkboxes
     var helpingAidGlasses = document.getElementById("helpingAidGlasses");
     var helpingAidCane = document.getElementById("helpingAidCane");
@@ -318,6 +319,7 @@ function disabilitySelected(){
     //change menu
     document.getElementById("none").checked ? disSection.style.display = "none" : disSection.style.display = "block";
     document.getElementById("none").checked ? muscleSliderDiv.style.display = "block" : muscleSliderDiv.style.display = "none";
+    document.getElementById("none").checked ? randomizeButton.style.marginTop = "9%" : randomizeButton.style.marginTop = "4%";
 
     if(lowVision.checked || blind.checked) {//low vision
         //set menu items
@@ -457,9 +459,126 @@ function resetValues() {
     paralysisWithWheelchair = false;
 }
 
+function uncheckHelpingAids(){
+    document.getElementById("helpingAidGlasses").checked = false;
+    document.getElementById("helpingAidCane").checked = false;
+    document.getElementById("helpingAidHearingAids").checked = false;
+    document.getElementById("helpingAidProsthetic").checked = false;
+    document.getElementById("helpingAidWheelchair").checked = false;
+}
 
 
+function randomize(){
+    var none = document.getElementById("none");
+    var lowVision = document.getElementById("lowVision");
+    var blind = document.getElementById("blind");
+    var lowHearing = document.getElementById("lowHearing");
+    var deaf = document.getElementById("deaf");
+    var dwarfism = document.getElementById("dwarfism");
+    var paralysis = document.getElementById("paralysis");
+    var amputationArmRight = document.getElementById("amputationArmRight");
+    var amputationArmLeft = document.getElementById("amputationArmLeft");
+    var amputationLegRight = document.getElementById("amputationLegRight");
+    var amputationLegLeft = document.getElementById("amputationLegLeft");
 
+    var helpingAidGlasses = document.getElementById("helpingAidGlasses");
+    var helpingAidCane = document.getElementById("helpingAidCane");
+    var helpingAidHearingAids = document.getElementById("helpingAidHearingAids");
+    var helpingAidProsthetic = document.getElementById("helpingAidProsthetic");
+    var helpingAidWheelchair = document.getElementById("helpingAidWheelchair");
+
+    var randomWeight = Math.floor(Math.random()*9+1);
+    var randomHeight = Math.floor(Math.random()*7+1);
+    var randomMuscles = Math.floor(Math.random()*3+1);
+    var randomSkinColor = Math.floor(Math.random()*20+1);
+    var randomBodyType = Math.floor(Math.random()*3+1);
+    var disabilityOrNot = Math.floor(Math.random()*3);
+    var physicalDisability = 10;//Math.floor(Math.random()*10+1);
+
+    //update slider values
+    document.getElementById("heightSlider").value = randomHeight;
+    document.getElementById("weightSlider").value = randomWeight;
+    document.getElementById("skinColorSlider").value = randomSkinColor;
+
+    if(disabilityOrNot == 0){
+        none.checked = true;
+        document.getElementById("muscleSlider").value = randomMuscles; //only randomize if no disability
+    } else{
+        var helpingAidsOne = Math.floor(Math.random()*2); // 0 or 1
+       // var helpingAidsTwo = Math.floor(Math.random()*3); // 0, 1 or 2
+        var helpingAidsThree = Math.floor(Math.random()*4); // 0, 1, 2 or 3
+
+        if(physicalDisability == 1){lowVision.checked = true; 
+            uncheckHelpingAids(); //no helping aids on 0
+            if(helpingAidsThree == 1){helpingAidGlasses.checked = true;}
+            if(helpingAidsThree == 2){helpingAidCane.checked = true;}
+            if(helpingAidsThree == 3){helpingAidGlasses.checked = true; helpingAidCane.checked = true;}
+        }
+        else if(physicalDisability == 2){blind.checked = true;
+            uncheckHelpingAids(); //no helping aids on 0
+            if(helpingAidsThree == 1){helpingAidGlasses.checked = true;}
+            if(helpingAidsThree == 2){helpingAidCane.checked = true;}
+            if(helpingAidsThree == 3){helpingAidGlasses.checked = true; helpingAidCane.checked = true;}
+        }
+        else if(physicalDisability == 3){lowHearing.checked = true;
+            uncheckHelpingAids(); //no helping aids on 0
+            if(helpingAidsOne == 1){helpingAidHearingAids.checked = true;}
+        }
+        else if(physicalDisability == 4){deaf.checked = true;
+            uncheckHelpingAids(); //no helping aids on 0
+            if(helpingAidsOne == 1){helpingAidHearingAids.checked = true;}
+        }
+        else if(physicalDisability == 5){dwarfism.checked = true;
+            uncheckHelpingAids(); //no helping aids on 0
+            if(helpingAidsOne == 1){helpingAidWheelchair.checked = true;}
+        }
+        else if(physicalDisability == 6){amputationArmRight.checked = true;
+            uncheckHelpingAids(); //no helping aids on 0
+            if(helpingAidsOne == 1){helpingAidProsthetic.checked = true;}
+        }
+        else if(physicalDisability == 7){amputationArmLeft.checked = true;
+            uncheckHelpingAids(); //no helping aids on 0
+            if(helpingAidsOne == 1){helpingAidProsthetic.checked = true;}
+        }
+        else if(physicalDisability == 8){amputationLegRight.checked = true;
+            uncheckHelpingAids(); //no helping aids on 0
+            if(helpingAidsThree == 1){helpingAidProsthetic.checked = true;}
+            if(helpingAidsThree == 2){helpingAidWheelchair.checked = true;}
+            if(helpingAidsThree == 3){helpingAidProsthetic.checked = true; helpingAidWheelchair.checked = true;}
+        }
+        else if(physicalDisability == 9){amputationLegLeft.checked = true;
+            uncheckHelpingAids(); //no helping aids on 0
+            if(helpingAidsThree == 1){helpingAidProsthetic.checked = true;}
+            if(helpingAidsThree == 2){helpingAidWheelchair.checked = true;}
+            if(helpingAidsThree == 3){helpingAidProsthetic.checked = true; helpingAidWheelchair.checked = true;}
+        }
+        else if(physicalDisability == 10){paralysis.checked = true;
+            uncheckHelpingAids(); //no helping aids on 0
+            if(helpingAidsOne == 1){helpingAidWheelchair.checked = true;}
+        }
+
+        console.log(helpingAidsOne);
+    }
+
+    console.log(randomHeight, randomWeight, randomMuscles, "bodyType: " + randomBodyType, "Skin color: " + randomSkinColor
+        , "yesorno: " + disabilityOrNot,  "Disability: " + physicalDisability
+    );
+
+    //update image
+    heightChanged();
+    weightChanged();
+    skinColorChanged();
+    if(disabilityOrNot == 0){
+        disabilitySelected();
+        musclesChanged(); //only randomize if no disability
+    } else {
+        disabilitySelected();
+    }
+
+    if(randomBodyType == 1){masculineBodyType();}
+    else if(randomBodyType == 2){feminineBodyType();}
+    else {neutralBodyType()};
+}
 
 
 
@@ -577,7 +696,7 @@ function saveValues(){
 }  
 
 function saveImg(){
-    sessionStorage.setItem("screen1Img", document.getElementById("characterImage").src); //updated img after face screen
+    sessionStorage.setItem("screen1Img", document.getElementById("characterImage2").src); //updated img after face screen
 }
 
 function loadFaceScreen(){
@@ -639,4 +758,17 @@ function loadfinalScreen() {
     charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor'); 
 
     document.getElementById("nameTag").innerHTML = sessionStorage.getItem('screen1Name');
+}
+
+function mustacheClicked(mustache){
+    var charImg = document.getElementById("characterImage2");
+    let position = charImg.src.search("images/");
+    var path = charImg.src.substring(position);
+
+    if(mustache) {
+        charImg.src = "mustacheImages/" +  path;
+    } 
+    else {
+        charImg.src = path;
+    }
 }
