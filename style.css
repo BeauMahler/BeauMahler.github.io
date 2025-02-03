@@ -18,8 +18,7 @@ body {
     margin: auto;
     position: relative;
     display: flex;
-    justify-content: center; 
-    vertical-align: top;
+    justify-content:center;
 }
 
 #characterbox, #characterbox2, #characterbox3, #characterbox4{
@@ -54,11 +53,10 @@ body {
 }
 
 #characterbox5{
-    width: 465px; 
+    width: 40%; 
     border: 2px solid;
-    height: 600px;
-    margin-top: 15px;
     overflow: hidden;
+    margin: auto;
 }
 
 
@@ -165,5 +163,18 @@ label {
 
 
 .faceOptionButton {
-    
+    margin: 5px 0px;
+}
+
+#custom-slider-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 60%;
+    height: 15px;
+    background: linear-gradient(to right,
+      black, brown, red, orange, yellow, green, blue, indigo, violet, white);
+    outline: none;
+    opacity: 0.8;
+    transition: opacity 0.4s;
+    border-radius: 15px;
 }

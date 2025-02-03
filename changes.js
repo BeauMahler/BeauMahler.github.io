@@ -529,48 +529,10 @@ function weightChanged(){
     currentWeightSliderValue = newWeightSliderValue; 
 }
 
-//var currentMuscleSliderValue = 1;
-
 function musclesChanged(){
     if(currentBodyType == "feminine") {feminineBodyType();}
     else if(currentBodyType == "masculine") {masculineBodyType();}
     else{neutralBodyType();}
-
-    // var newMuscleSliderValue = document.getElementById("muscleSlider").value;
-    // var image = document.getElementById("characterImage");
-    // var newSrcValue;
-
-    // if(newMuscleSliderValue > currentMuscleSliderValue) { //bigger
-    //     var steps = Math.abs(newMuscleSliderValue - currentMuscleSliderValue);
-
-    //     if(steps == 1 && currentMuscleSliderValue == 1){ // none to middle
-    //         if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M2.png"}
-    //         else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M2.png"}
-    //         else { newSrcValue = "images/prototype_character_MAIN_neutral_M2.png"};
-    //     }  
-    //     else{ //middle or none to max
-    //         if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M3.png"}  
-    //         else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M3.png"}
-    //         else { newSrcValue = "images/prototype_character_MAIN_neutral_M3.png"}; 
-    //     }
-    // }
-    // if(newMuscleSliderValue < currentMuscleSliderValue){ //smaller
-    //     var steps = Math.abs(currentMuscleSliderValue - newMuscleSliderValue);
-
-    //     if(steps == 1 && currentMuscleSliderValue == 3){ //max to middle
-    //         if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine_M2.png" }
-    //         else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine_M2.png"}
-    //         else { newSrcValue = "images/prototype_character_MAIN_neutral_M2.png"};
-    //     }
-    //     else{ //middle or max to none
-    //         if(currentBodyType == "feminine"){ newSrcValue = "images/prototype_character_MAIN_Feminine.png" }
-    //         else if(currentBodyType == "masculine"){ newSrcValue = "images/prototype_character_MAIN_masculine.png"}
-    //         else { newSrcValue = "images/prototype_character_MAIN_neutral.png"};
-    //     }   
-    // }
-
-    // image.src = newSrcValue;
-    // currentMuscleSliderValue = newMuscleSliderValue;
 }
 
 function skinColorChanged(){
@@ -600,6 +562,7 @@ function skinColorChanged(){
 function saveValues(){
     sessionStorage.setItem("screen1Height", document.getElementById("characterbox").style.height);
     sessionStorage.setItem("screen1marginTOP", document.getElementById("characterbox").style.marginTop);
+    sessionStorage.setItem("screen1marginBOTTOM", document.getElementById("characterbox").style.marginBottom);
     sessionStorage.setItem("screen1marginLEFT", document.getElementById("characterImage").style.marginLeft);
     sessionStorage.setItem("screen1WidthImg", document.getElementById("characterImage").style.width);
     sessionStorage.setItem("screen1WidthBox", document.getElementById("characterbox").style.width);
@@ -611,14 +574,13 @@ function saveValues(){
     // console.log("width:" + screen1_width);
     // console.log("src: " + screen1_img);
     // console.log("color " +screen1_skincolor);      
-}   
+}  
+
+function saveImg(){
+    sessionStorage.setItem("screen1Img", document.getElementById("characterImage").src); //updated img after face screen
+}
 
 function loadFaceScreen(){
-    // console.log("RECEIVED. height: " + getHeight);
-    // console.log("width:" + getWidth);
-    // console.log("src: " + getSrc);
-    // console.log("color " +getColor);
-
     var charBox = document.getElementById("characterbox2");
     var charImg = document.getElementById("characterImage2");
 
@@ -631,69 +593,50 @@ function loadFaceScreen(){
     charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor');      
 }
 
+function loadOutfitScreen(){
+    var charBox = document.getElementById("characterbox3");
+    var charImg = document.getElementById("characterImage3");
+
+    charBox.style.height = sessionStorage.getItem('screen1Height');
+    charBox.style.width = sessionStorage.getItem('screen1WidthBox');
+    charImg.style.width = sessionStorage.getItem('screen1WidthImg');
+    charImg.src = sessionStorage.getItem('screen1Img');
+    charBox.style.marginTop = sessionStorage.getItem('screen1marginTOP');
+    charImg.style.marginLeft = sessionStorage.getItem('screen1marginLEFT');
+    charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor'); 
+    
+    var checkHeight = parseInt(sessionStorage.getItem('screen1Height'));
+    console.log(checkHeight);
+}
+
 function loadfinalScreen() {
+    var charBox = document.getElementById("characterbox5");
+    var charImg = document.getElementById("characterImage5");
+
+    var checkHeight = parseInt(sessionStorage.getItem('screen1Height'));
+    if(checkHeight > 600){checkHeight = checkHeight - 40 + "px"};
+
+    //get it centered
+    var checkMarginBottom = parseInt(sessionStorage.getItem('screen1marginTOP'));
+    if(checkMarginBottom >= 200){checkMarginBottom = checkMarginBottom - 50;}
+    else if(checkMarginBottom >= 150){checkMarginBottom = checkMarginBottom - 40;}
+    else if(checkMarginBottom >= 130){checkMarginBottom = checkMarginBottom - 30;}
+    else if(checkMarginBottom >= 110){checkMarginBottom = checkMarginBottom - 10;}
+    else if(checkMarginBottom >= 80){checkMarginBottom = checkMarginBottom + 10;}
+    else if(checkMarginBottom >= 50 ){checkMarginBottom = checkMarginBottom + 5;}
+   // 50 --> 60                             +10
+   // 110 --> 110                           -
+   // 170 --> 130                           -40
+   // 200 --> 150 (minimaal) KLEINST        -50
+
+    charBox.style.height = checkHeight;
+    charBox.style.width = sessionStorage.getItem('screen1WidthBox');
+    charImg.style.width = sessionStorage.getItem('screen1WidthImg');
+    charImg.src = sessionStorage.getItem('screen1Img');
+    charBox.style.marginTop = sessionStorage.getItem('screen1marginTOP');
+    charBox.style.marginBottom = checkMarginBottom + "px";
+    charImg.style.marginLeft = sessionStorage.getItem('screen1marginLEFT');
+    charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor'); 
+
     document.getElementById("nameTag").innerHTML = sessionStorage.getItem('screen1Name');
 }
-
-
-const addStyles = (el, styles) => Object.assign(el.style, styles);
-
-function eyesChosen(eyeNumber){
-    var charBox = document.getElementById("characterbox2");
-    var charImg = document.getElementById("characterImage2");
-    var topImg = document.getElementById("overlayImg");
-    var topImg2 = document.getElementById("overlayImg2");
-    if(eyeNumber == 1){
-        topImg.src = "images/TEST.png";
-        topImg2.src = "images/TEST.png";
-    }
-    var absoluteX1 = 465 / 2 - 30;
-    var absoluteX2 = 465 / 2 ;
-    var absoluteY = parseInt(charBox.style.height) / 5;
-    // console.log(sessionStorage.getItem('screen1WidthImg'));
-    // topImg.style.position = "absolute";
-
-    // topImg.style.top = absoluteY + "px";
-    // topImg.style.height = "15px";
-    // topImg.style.width = "15px";
-
-    addStyles(topImg, {
-        position: "absolute",
-        top: absoluteY + "px",
-        left: absoluteX1 + "px",
-        height: "20px",
-        width: "20px"
-    });
-
-    addStyles(topImg2, {
-        position: "absolute",
-        top: absoluteY + "px",
-        left: absoluteX2 + "px",
-        height: "20px",
-        width: "20px"
-    });
-    // .position = ;
-    // topImg2.style.top = absoluteY + "px";
-    // topImg2.style.height = "15px";
-    // topImg2.style.width = "15px";
-    // topImg.style.zIndex = 1;
-}
-
-function changeEyeColor() {
-    document.getElementById("overlayImg").style.backgroundColor = "green";
-}
-
-
-
-// function helpingAidsSelected(){
-//     var bodyTypeDiv = document.getElementById("bodyTypeDiv");
-//     //helping aids checkboxes
-//     var helpingAidGlasses = document.getElementById("helpingAidGlasses");
-//     var helpingAidCane = document.getElementById("helpingAidCane");
-//     var helpingAidHearingAids = document.getElementById("helpingAidHearingAids");
-//     var helpingAidProsthetic = document.getElementById("helpingAidProsthetic");
-//     var helpingAidWheelchair = document.getElementById("helpingAidWheelchair");
-
-//     helpingAidWheelchair.checked ? bodyTypeDiv.style.display = "none" : bodyTypeDiv.style.display = "block";
-
-// }

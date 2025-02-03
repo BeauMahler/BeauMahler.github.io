@@ -4,39 +4,71 @@
         <title>Character menu prototype</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <script type="text/javascript" src="changes.js"></script>
+        <script type="module" src="https://unpkg.com/slider-color-picker"></script>
     </head>
     <body onload="loadFaceScreen()">
         <div id="main">
-            <div id="characterbox2"><img id="characterImage2" src="images/prototype_character_MAIN_neutral.png"/></div>
+            <div id="characterbox2"><img id="characterImage2"/></div>
             <div id="menubox">
+                <br>
+                <p class="sectionHeading">Head options:</p><br>
                 <div><label for="eyes">Eyes:</label>
-                    <button class="faceOptionButton">Option A</button>
-                    <button class="faceOptionButton">Option B</button>
-                    <button class="faceOptionButton">Option C</button>
+                    <button class="faceOptionButton" disabled>Option A</button>
+                    <button class="faceOptionButton" disabled>Option B</button>
+                    <button class="faceOptionButton" disabled>Option C</button>
+                </div>
+                <div class="slidecontainer">
+                    <label for="eyecolor">Eyecolor:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
                 </div>
                 <div><label for="nose">Nose:</label>
-                    <button class="faceOptionButton">Option A</button>
-                    <button class="faceOptionButton">Option B</button>
-                    <button class="faceOptionButton">Option C</button>
+                    <button class="faceOptionButton" disabled>Option A</button>
+                    <button class="faceOptionButton" disabled>Option B</button>
+                    <button class="faceOptionButton" disabled>Option C</button>
                 </div>
                 <div><label for="mouth">Mouth:</label>
-                    <button class="faceOptionButton">Option A</button>
-                    <button class="faceOptionButton">Option B</button>
-                    <button class="faceOptionButton">Option C</button>
+                    <button class="faceOptionButton" disabled>Option A</button>
+                    <button class="faceOptionButton" disabled>Option B</button>
+                    <button class="faceOptionButton" disabled>Option C</button>
+                </div>
+                <div><label for="mouth">Facial hair:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton">Mustache</button>
+                    <button class="faceOptionButton" disabled>Beard and mustache</button>
                 </div>
                 <div><label for="hairstyle">Hairstyle:</label>
-                    <button class="faceOptionButton">Option A</button>
-                    <button class="faceOptionButton">Option B</button>
-                    <button class="faceOptionButton">Option C</button>
+                    <button class="faceOptionButton" disabled>Option A</button>
+                    <button class="faceOptionButton" disabled>Option B</button>
+                    <button class="faceOptionButton" disabled>Option C</button>
                 </div>
-                <div><label for="haircolor">Haircolor:</label>
-                    <!-- // RGB sliders with some initial value -->
-                    <slider-color-picker mode="rgba" value="#FF55A7"><slider-color-picker>
+                <div class="slidecontainer">
+                    <label for="haircolor">Haircolor:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div><label for="eyebrows">Eyebrows:</label>
+                    <button class="faceOptionButton" disabled>Option A</button>
+                    <button class="faceOptionButton" disabled>Option B</button>
+                    <button class="faceOptionButton" disabled>Option C</button>
+                </div>
+                <div><label for="ears">Ears:</label>
+                    <button class="faceOptionButton" disabled>Option A</button>
+                    <button class="faceOptionButton" disabled>Option B</button>
+                    <button class="faceOptionButton" disabled>Option C</button>
+                </div>
+                <div><label for="mouth">Freckles:</label>
+                    <button class="faceOptionButton" disabled>Option A</button>
+                    <button class="faceOptionButton" disabled>Option B</button>
+                    <button class="faceOptionButton" disabled>Option C</button>
+                </div>
+                <div><label for="facepresets">Presets:</label>
+                    <button class="faceOptionButton" disabled>Option A</button>
+                    <button class="faceOptionButton" disabled>Option B</button>
+                    <button class="faceOptionButton" disabled>Option C</button>
                 </div>
                 
                 
                 <button class="previousButton"><a href="./index.html" class="buttonText">Previous Screen</a></button>
-                <button class="nextButton"><a href="./outfitScreen.html" class="buttonText">Next Screen</a></button>
+                <button class="nextButton" onclick="saveImg()"><a href="./outfitScreen.html" class="buttonText">Next Screen</a></button>
             </div>
         </div>
     </body>
