@@ -319,7 +319,7 @@ function disabilitySelected(){
     //change menu
     document.getElementById("none").checked ? disSection.style.display = "none" : disSection.style.display = "block";
     document.getElementById("none").checked ? muscleSliderDiv.style.display = "block" : muscleSliderDiv.style.display = "none";
-    document.getElementById("none").checked ? randomizeButton.style.marginTop = "9%" : randomizeButton.style.marginTop = "4%";
+    document.getElementById("none").checked ? randomizeButton.style.marginTop = "8%" : randomizeButton.style.marginTop = "4%";
 
     if(lowVision.checked || blind.checked) {//low vision
         //set menu items
@@ -487,6 +487,18 @@ function randomize(){
     var helpingAidProsthetic = document.getElementById("helpingAidProsthetic");
     var helpingAidWheelchair = document.getElementById("helpingAidWheelchair");
 
+    var superpowerBlind = document.getElementById("superpowerBlind");
+    var superpowerDeaf = document.getElementById("superpowerDeaf");
+    var superpowerAmputation = document.getElementById("superpowerAmputation");
+    var superpowerDwarfism = document.getElementById("superpowerDwarfism");
+    var superpowerParalysis = document.getElementById("superpowerParalysis");
+    var amputationArmRight = document.getElementById("amputationArmRight");
+    var amputationLegRight = document.getElementById("amputationLegRight");
+
+    uncheckSuperpowers();
+    resetSuperpowers();
+    uncheckHelpingAids(); 
+
     var randomWeight = Math.floor(Math.random()*9+1);
     var randomHeight = Math.floor(Math.random()*7+1);
     var randomMuscles = Math.floor(Math.random()*3+1);
@@ -494,6 +506,9 @@ function randomize(){
     var randomBodyType = Math.floor(Math.random()*3+1);
     var disabilityOrNot = Math.floor(Math.random()*3);
     var physicalDisability = Math.floor(Math.random()*10+1);
+    var superpowerOnOrOff = Math.floor(Math.random()*2); // 0 or 1
+    var helpingAidsOne = Math.floor(Math.random()*2); // 0 or 1
+    var helpingAidsThree = Math.floor(Math.random()*4); // 0, 1, 2 or 3
 
     //update slider values
     document.getElementById("heightSlider").value = randomHeight;
@@ -503,66 +518,56 @@ function randomize(){
     if(disabilityOrNot == 0){
         none.checked = true;
         document.getElementById("muscleSlider").value = randomMuscles; //only randomize if no disability
-    } else{
-        var helpingAidsOne = Math.floor(Math.random()*2); // 0 or 1
-       // var helpingAidsTwo = Math.floor(Math.random()*3); // 0, 1 or 2
-        var helpingAidsThree = Math.floor(Math.random()*4); // 0, 1, 2 or 3
-
-        if(physicalDisability == 1){lowVision.checked = true; 
-            uncheckHelpingAids(); //no helping aids on 0
+    } else{       
+        if(physicalDisability == 1){lowVision.checked = true; //no helping aids on 0
             if(helpingAidsThree == 1){helpingAidGlasses.checked = true;}
             if(helpingAidsThree == 2){helpingAidCane.checked = true;}
             if(helpingAidsThree == 3){helpingAidGlasses.checked = true; helpingAidCane.checked = true;}
+            if((helpingAidsThree == 2 || helpingAidsThree == 3) && superpowerOnOrOff == 1){superpowerBlind.checked = true;}
         }
-        else if(physicalDisability == 2){blind.checked = true;
-            uncheckHelpingAids(); //no helping aids on 0
+        else if(physicalDisability == 2){blind.checked = true; //no helping aids on 0
             if(helpingAidsThree == 1){helpingAidGlasses.checked = true;}
             if(helpingAidsThree == 2){helpingAidCane.checked = true;}
             if(helpingAidsThree == 3){helpingAidGlasses.checked = true; helpingAidCane.checked = true;}
+            if((helpingAidsThree == 2 || helpingAidsThree == 3) && superpowerOnOrOff == 1){superpowerBlind.checked = true;}
         }
-        else if(physicalDisability == 3){lowHearing.checked = true;
-            uncheckHelpingAids(); //no helping aids on 0
+        else if(physicalDisability == 3){lowHearing.checked = true; //no helping aids on 0
             if(helpingAidsOne == 1){helpingAidHearingAids.checked = true;}
+            if(superpowerOnOrOff == 1){superpowerDeaf.checked = true;}
         }
-        else if(physicalDisability == 4){deaf.checked = true;
-            uncheckHelpingAids(); //no helping aids on 0
+        else if(physicalDisability == 4){deaf.checked = true; //no helping aids on 0
             if(helpingAidsOne == 1){helpingAidHearingAids.checked = true;}
+            if(superpowerOnOrOff == 1){superpowerDeaf.checked = true;}
         }
-        else if(physicalDisability == 5){dwarfism.checked = true;
-            uncheckHelpingAids(); //no helping aids on 0
+        else if(physicalDisability == 5){dwarfism.checked = true; //no helping aids on 0
             if(helpingAidsOne == 1){helpingAidWheelchair.checked = true;}
+            if(superpowerOnOrOff == 1){superpowerDwarfism.checked = true;}
         }
-        else if(physicalDisability == 6){amputationArmRight.checked = true;
-            uncheckHelpingAids(); //no helping aids on 0
+        else if(physicalDisability == 6){amputationArmRight.checked = true; //no helping aids on 0
             if(helpingAidsOne == 1){helpingAidProsthetic.checked = true;}
+            if(superpowerOnOrOff == 1){superpowerAmputation.checked = true;}
         }
-        else if(physicalDisability == 7){amputationArmLeft.checked = true;
-            uncheckHelpingAids(); //no helping aids on 0
+        else if(physicalDisability == 7){amputationArmLeft.checked = true; //no helping aids on 0
             if(helpingAidsOne == 1){helpingAidProsthetic.checked = true;}
+            if(superpowerOnOrOff == 1){superpowerAmputation.checked = true;}
         }
-        else if(physicalDisability == 8){amputationLegRight.checked = true;
-            uncheckHelpingAids(); //no helping aids on 0
+        else if(physicalDisability == 8){amputationLegRight.checked = true; //no helping aids on 0
             if(helpingAidsThree == 1){helpingAidProsthetic.checked = true;}
             if(helpingAidsThree == 2){helpingAidWheelchair.checked = true;}
             if(helpingAidsThree == 3){helpingAidProsthetic.checked = true; helpingAidWheelchair.checked = true;}
+            if((helpingAidsThree == 1 || helpingAidsThree == 0) && superpowerOnOrOff == 1){superpowerAmputation.checked = true;}
         }
-        else if(physicalDisability == 9){amputationLegLeft.checked = true;
-            uncheckHelpingAids(); //no helping aids on 0
+        else if(physicalDisability == 9){amputationLegLeft.checked = true; //no helping aids on 0
             if(helpingAidsThree == 1){helpingAidProsthetic.checked = true;}
             if(helpingAidsThree == 2){helpingAidWheelchair.checked = true;}
             if(helpingAidsThree == 3){helpingAidProsthetic.checked = true; helpingAidWheelchair.checked = true;}
+            if((helpingAidsThree == 1 || helpingAidsThree == 0) && superpowerOnOrOff == 1){superpowerAmputation.checked = true;}
         }
-        else if(physicalDisability == 10){paralysis.checked = true;
-            uncheckHelpingAids(); //no helping aids on 0
+        else if(physicalDisability == 10){paralysis.checked = true; //no helping aids on 0
             if(helpingAidsOne == 1){helpingAidWheelchair.checked = true;}
+            if(superpowerOnOrOff == 1){superpowerParalysis.checked = true;}
         }
-
-        console.log(helpingAidsOne);
     }
-
-    console.log(randomHeight, randomWeight, randomMuscles, "bodyType: " + randomBodyType, "Skin color: " + randomSkinColor
-        , "yesorno: " + disabilityOrNot,  "Disability: " + physicalDisability
-    );
 
     //update image
     heightChanged();
@@ -573,6 +578,17 @@ function randomize(){
         musclesChanged(); //only randomize if no disability
     } else {
         disabilitySelected();
+        if(superpowerOnOrOff == 1){
+            if((physicalDisability == 1 || physicalDisability == 2) && (helpingAidsThree =! 2 && helpingAidsThree != 3)){
+                //do not call superpower function
+            }
+            else if((physicalDisability == 8 || physicalDisability == 9) && (helpingAidsThree != 0 && helpingAidsThree != 1)){    
+                //do not call superpower function 
+            }
+            else{
+                superpowerSelected();
+            }
+        }
     }
 
     if(randomBodyType == 1){masculineBodyType();}
@@ -725,7 +741,6 @@ function loadOutfitScreen(){
     charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor'); 
     
     var checkHeight = parseInt(sessionStorage.getItem('screen1Height'));
-    console.log(checkHeight);
 }
 
 function loadfinalScreen() {
