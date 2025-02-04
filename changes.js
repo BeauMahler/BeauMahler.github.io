@@ -644,7 +644,7 @@ function weightChanged(){
     if(newWeightSliderValue > currentWeightSliderValue) { //fatter 
         var difference = newWeightSliderValue - currentWeightSliderValue; //steps
 
-        document.getElementById("characterImage").style.width = currentWeight + 75*difference + "px"; //set new weight
+        document.getElementById("characterImage").style.width = currentWeight + 50*difference + "px"; //set new weight
 
         var newWidth = parseInt(document.getElementById("characterImage").style.width);
         newMarginLEFT = (-newWidth/2)+parseInt(currentBoxWeight)/2;
@@ -654,7 +654,7 @@ function weightChanged(){
     if(newWeightSliderValue < currentWeightSliderValue){ //thinner
         var difference = currentWeightSliderValue - newWeightSliderValue; //steps
 
-        document.getElementById("characterImage").style.width = currentWeight - 75*difference + "px"; //set new weight
+        document.getElementById("characterImage").style.width = currentWeight - 50*difference + "px"; //set new weight
 
         var newWidth = parseInt(document.getElementById("characterImage").style.width);
         newMarginLEFT = (-newWidth/2)+parseInt(currentBoxWeight)/2;
@@ -713,6 +713,10 @@ function saveValues(){
 
 function saveImg(){
     sessionStorage.setItem("screen1Img", document.getElementById("characterImage2").src); //updated img after face screen
+}
+
+function saveImgOutfit(){
+    sessionStorage.setItem("screen1Img", document.getElementById("characterImage3").src); //updated img after outfit screen
 }
 
 function loadFaceScreen(){
@@ -782,8 +786,29 @@ function mustacheClicked(mustache){
 
     if(mustache) {
         charImg.src = "mustacheImages/" +  path;
+        document.getElementById("mustacheButton").style.border = "2px solid";
+        document.getElementById("noMustacheButton").style.border = "none";
     } 
     else {
         charImg.src = path;
+        document.getElementById("mustacheButton").style.border = "none";
+        document.getElementById("noMustacheButton").style.border = "2px solid";
+    }
+}
+
+function dressClicked(dress){
+    var charImg = document.getElementById("characterImage3");
+    let position = charImg.src.search("images/");
+    var path = charImg.src.substring(position);
+
+    if(dress) {
+        charImg.src = "dressesImages/" +  path;
+        document.getElementById("dressButton").style.border = "2px solid";
+        document.getElementById("noDressButton").style.border = "none";
+    } 
+    else {
+        charImg.src = path;
+        document.getElementById("dressButton").style.border = "none";
+        document.getElementById("noDressButton").style.border = "2px solid";
     }
 }

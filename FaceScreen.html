@@ -14,9 +14,13 @@
                 <p class="sectionHeading">Head options</p><br>
                 <div><label for="eyes">Eyes:</label>
                     <button class="faceOptionButton">None</button>
-                    <button class="faceOptionButton" disabled>Option A</button>
+                    <button class="faceOptionButton" disabled><img src="images/eyes1.png" class="eyeButton"/></button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
+                </div>
+                <div class="slidecontainer">
+                    <label for="eyesize" class="optionsLabel">Eye size:</label>
+                    <input type="range" min="1" max="7" value="4" class="optionsSlider" disabled>
                 </div>
                 <div class="slidecontainer">
                     <label for="eyecolor">Eyecolor:</label>
@@ -28,15 +32,23 @@
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
                 </div>
+                <div class="slidecontainer">
+                    <label for="nosesize" class="optionsLabel">Nose size:</label>
+                    <input type="range" min="1" max="7" value="4" class="optionsSlider" disabled>
+                </div>
                 <div><label for="mouth">Mouth:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
                 </div>
+                <div class="slidecontainer">
+                    <label for="mouthsize" class="optionsLabel">Mouth size:</label>
+                    <input type="range" min="1" max="7" value="4" class="optionsSlider" disabled>
+                </div>
                 <div><label for="mouth">Facial hair:</label>
-                    <button class="faceOptionButton" onclick="mustacheClicked(false)">None</button>
-                    <button class="faceOptionButton" onclick="mustacheClicked(true)">Mustache</button>
+                    <button class="faceOptionButton" onclick="mustacheClicked(false)" id="noMustacheButton">None</button>
+                    <button class="faceOptionButton" onclick="mustacheClicked(true)" id="mustacheButton">Mustache</button>
                     <button class="faceOptionButton" disabled>Beard and mustache</button>
                 </div>
                 <div><label for="hairstyle">Hairstyle:</label>
@@ -61,11 +73,23 @@
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
                 </div>
+                <div class="slidecontainer">
+                    <label for="earsize" class="optionsLabel">Ear size:</label>
+                    <input type="range" min="1" max="7" value="4" class="optionsSlider" disabled>
+                </div>
                 <div><label for="mouth">Freckles:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
+                </div>
+                <div><label for="makeup">Make-up:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Blush</button>
+                    <button class="faceOptionButton" disabled>Mascara</button>
+                    <button class="faceOptionButton" disabled>Lipstick</button>
+                    <button class="faceOptionButton" disabled>Eye shadow</button>
+                    <button class="faceOptionButton" disabled>Eyeliner</button>
                 </div>
                 <div><label for="facepresets">Presets:</label>
                     <button class="faceOptionButton">None</button>
@@ -73,11 +97,10 @@
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
                 </div>
-                
-                
                 <button class="previousButton"><a href="./index.html" class="buttonText">Previous Screen</a></button>
                 <button class="nextButton" onclick="saveImg()"><a href="./outfitScreen.html" class="buttonText">Next Screen</a></button>
             </div>
+            <p class="disabledText">*Disabled options are not supported yet</p>
         </div>
     </body>
 </html>

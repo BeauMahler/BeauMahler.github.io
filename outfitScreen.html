@@ -30,8 +30,8 @@
                     <button class="faceOptionButton" disabled>Option C</button>
                 </div>
                 <div><label for="dresses">Dress:</label>
-                    <button class="faceOptionButton">None</button>
-                    <button class="faceOptionButton" disabled>Option A</button>
+                    <button class="faceOptionButton" onclick="dressClicked(false)" id="noDressButton">None</button>
+                    <button class="faceOptionButton" onclick="dressClicked(true)" id="dressButton">Plain Green</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
                 </div>
@@ -86,8 +86,9 @@
 
 
                 <button class="previousButton"><a href="./FaceScreen.html" class="buttonText">Previous Screen</a></button>
-                <button class="nextButton"><a href="./extrasScreen.html" class="buttonText">Next Screen</a></button>
+                <button class="nextButton" onclick="saveImgOutfit()"><a href="./extrasScreen.html" class="buttonText">Next Screen</a></button>
             </div>
+            <p class="disabledText">*Disabled options are not supported yet</p>
         </div>
     </body>
 </html>

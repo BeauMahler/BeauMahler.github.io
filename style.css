@@ -101,13 +101,13 @@ body {
     font-size: 20px;
     padding: 5px;
     text-decoration: underline;
-    width: 30%;
+    width: 50%;
 }
 
 .disabilityHeading{
     margin:auto;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     padding: 5px;
 }
 
@@ -162,20 +162,21 @@ button {
 label {
     margin:auto;
     font-weight: bold;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 18px;
+    /* padding: 5px; */
 }
 
 
 .faceOptionButton {
     margin: 5px 0px;
+    padding: 3px;
 }
 
 #custom-slider-range {
     -webkit-appearance: none;
     appearance: none;
-    width: 60%;
-    height: 15px;
+    width: 50%;
+    height: 10px;
     background: linear-gradient(to right,
       black, brown, red, orange, yellow, green, blue, indigo, violet, white);
     outline: none;
@@ -189,4 +190,30 @@ label {
     margin-top: 8%;
     padding: 10px;
     color: blue;
+}
+
+.optionsSlider {
+    width:50%;
+    height: 10px;
+    background: #d3d3d3; /* Grey background */
+}
+.optionsLabel {
+    margin:auto;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.disabledText{
+    position: absolute;
+    right: 18%;
+    bottom: 1%;
+}
+
+#noMustacheButton, #noDressButton{
+    border: 2px solid;
+}
+
+.eyeButton {
+    height: 10px;
+    width: 30px;
 }
