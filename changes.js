@@ -713,6 +713,8 @@ function saveValues(){
 
 function saveImg(){
     sessionStorage.setItem("screen1Img", document.getElementById("characterImage2").src); //updated img after face screen
+    console.log(mustacheImg.toString());
+    sessionStorage.setItem("mustacheChosen", mustacheImg.toString());
 }
 
 function saveImgOutfit(){
@@ -729,7 +731,7 @@ function loadFaceScreen(){
     charImg.src = sessionStorage.getItem('screen1Img');
     charBox.style.marginTop = sessionStorage.getItem('screen1marginTOP');
     charImg.style.marginLeft = sessionStorage.getItem('screen1marginLEFT');
-    charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor');      
+    charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor');  
 }
 
 function loadOutfitScreen(){
@@ -779,17 +781,21 @@ function loadfinalScreen() {
     document.getElementById("nameTag").innerHTML = sessionStorage.getItem('screen1Name');
 }
 
+var mustacheImg = 0;
+
 function mustacheClicked(mustache){
     var charImg = document.getElementById("characterImage2");
     let position = charImg.src.search("images/");
     var path = charImg.src.substring(position);
 
     if(mustache) {
+        mustacheImg = 1;
         charImg.src = "mustacheImages/" +  path;
         document.getElementById("mustacheButton").style.border = "2px solid";
         document.getElementById("noMustacheButton").style.border = "none";
     } 
     else {
+        mustacheImg = 0;
         charImg.src = path;
         document.getElementById("mustacheButton").style.border = "none";
         document.getElementById("noMustacheButton").style.border = "2px solid";
@@ -801,14 +807,26 @@ function dressClicked(dress){
     let position = charImg.src.search("images/");
     var path = charImg.src.substring(position);
 
+    var mustacheChosen = sessionStorage.getItem("mustacheChosen");
+
     if(dress) {
-        charImg.src = "dressesImages/" +  path;
         document.getElementById("dressButton").style.border = "2px solid";
         document.getElementById("noDressButton").style.border = "none";
+        if(mustacheChosen == 1){
+            charImg.src = "mustacheAndDressImages/" +  path;
+        }
+        else{
+            charImg.src = "dressesImages/" +  path;
+        }
     } 
-    else {
-        charImg.src = path;
+    if(!dress){
         document.getElementById("dressButton").style.border = "none";
         document.getElementById("noDressButton").style.border = "2px solid";
+        if(mustacheChosen == 1){
+            charImg.src = "mustacheImages/" +  path;
+        }
+        else{
+            charImg.src = path;
+        }
     }
 }
