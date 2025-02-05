@@ -176,7 +176,19 @@ label {
     -webkit-appearance: none;
     appearance: none;
     width: 50%;
-    height: 10px;
+    height: 5px;
+    background: linear-gradient(to right,
+      black, brown, red, orange, yellow, green, blue, indigo, violet, white);
+    outline: none;
+    opacity: 0.8;
+    transition: opacity 0.4s;
+    border-radius: 15px;
+}
+#custom-slider-rangeOutfit {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30%;
+    height: 5px;
     background: linear-gradient(to right,
       black, brown, red, orange, yellow, green, blue, indigo, violet, white);
     outline: none;
@@ -216,4 +228,8 @@ label {
 .eyeButton {
     height: 10px;
     width: 30px;
+}
+
+.outfitcolor {
+    margin-left: 15px;
 }
