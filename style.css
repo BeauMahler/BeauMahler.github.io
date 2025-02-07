@@ -166,7 +166,9 @@ label {
     /* padding: 5px; */
 }
 
-
+.slidecontainer{
+    padding: 2px;
+}
 .faceOptionButton {
     margin: 5px 0px;
     padding: 3px;
@@ -211,8 +213,6 @@ label {
 }
 .optionsLabel {
     margin:auto;
-    font-weight: bold;
-    font-size: 20px;
 }
 
 .disabledText{
@@ -232,4 +232,8 @@ label {
 
 .outfitcolor {
     margin-left: 15px;
+}
+
+#noseSizeOption, #mouthSizeOption, #facialHairColorOption, #hairColorOption, #hairLengthOption, #eyebrowColorOption, #earSizeOption, #freckleColorOption{
+    display: none;
 }

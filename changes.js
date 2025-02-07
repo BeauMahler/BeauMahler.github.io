@@ -830,3 +830,142 @@ function dressClicked(dress){
         }
     }
 }
+
+var toggleEyes = 0;
+function expandEyeOptions(){
+    if(toggleEyes == 0){
+        document.getElementById("eyeSizeOption").style.display = "block";
+        document.getElementById("eyeColorOption").style.display = "block";
+        document.getElementById("expandEyeOptions").className = "fa fa-caret-up";
+        toggleEyes = 1;
+    }
+    else if(toggleEyes == 1){
+        document.getElementById("eyeSizeOption").style.display = "none";
+        document.getElementById("eyeColorOption").style.display = "none";
+        document.getElementById("expandEyeOptions").className = "fa fa-caret-down";
+        toggleEyes = 0;
+    }
+}
+var toggleEyes = 1;
+function expandEyeOptions(){
+    if(toggleEyes == 0){
+        document.getElementById("eyeSizeOption").style.display = "block";
+        document.getElementById("eyeColorOption").style.display = "block";
+        document.getElementById("expandEyeOptions").className = "fa fa-caret-up";
+        toggleEyes = 1;
+    }
+    else if(toggleEyes == 1){
+        document.getElementById("eyeSizeOption").style.display = "none";
+        document.getElementById("eyeColorOption").style.display = "none";
+        document.getElementById("expandEyeOptions").className = "fa fa-caret-down";
+        toggleEyes = 0;
+    }
+}
+var toggleNose = 0;
+function expandNoseOptions(){
+    if(toggleNose == 0){
+        document.getElementById("noseSizeOption").style.display = "block";
+        document.getElementById("expandNoseOptions").className = "fa fa-caret-up";
+        toggleNose = 1;
+    }
+    else if(toggleNose == 1){
+        document.getElementById("noseSizeOption").style.display = "none";
+        document.getElementById("expandNoseOptions").className = "fa fa-caret-down";
+        toggleNose = 0;
+    }
+}
+var toggleMouth = 0;
+function expandMouthOptions(){
+    if(toggleMouth == 0){
+        document.getElementById("mouthSizeOption").style.display = "block";
+        document.getElementById("expandMouthOptions").className = "fa fa-caret-up";
+        toggleMouth = 1;
+    }
+    else if(toggleMouth == 1){
+        document.getElementById("mouthSizeOption").style.display = "none";
+        document.getElementById("expandMouthOptions").className = "fa fa-caret-down";
+        toggleMouth = 0;
+    }
+}
+var toggleFacialHair = 0;
+function expandFacialHairOptions(){
+    if(toggleFacialHair == 0){
+        document.getElementById("facialHairColorOption").style.display = "block";
+        document.getElementById("expandFacialHairOptions").className = "fa fa-caret-up";
+        toggleFacialHair = 1;
+    }
+    else if(toggleFacialHair == 1){
+        document.getElementById("facialHairColorOption").style.display = "none";
+        document.getElementById("expandFacialHairOptions").className = "fa fa-caret-down";
+        toggleFacialHair = 0;
+    }
+}
+var toggleHair = 0;
+function expandHairOptions(){
+    if(toggleHair == 0){
+        document.getElementById("hairLengthOption").style.display = "block";
+        document.getElementById("hairColorOption").style.display = "block";
+        document.getElementById("expandHairOptions").className = "fa fa-caret-up";
+        toggleHair = 1;
+    }
+    else if(toggleHair == 1){
+        document.getElementById("hairLengthOption").style.display = "none";
+        document.getElementById("hairColorOption").style.display = "none";
+        document.getElementById("expandHairOptions").className = "fa fa-caret-down";
+        toggleHair = 0;
+    }
+}
+var toggleEyebrows = 0;
+function expandEyebrowOptions(){
+    if(toggleEyebrows == 0){
+        document.getElementById("eyebrowColorOption").style.display = "block";
+        document.getElementById("expandEyebrowOptions").className = "fa fa-caret-up";
+        toggleEyebrows = 1;
+    }
+    else if(toggleEyebrows == 1){
+        document.getElementById("eyebrowColorOption").style.display = "none";
+        document.getElementById("expandEyebrowOptions").className = "fa fa-caret-down";
+        toggleEyebrows = 0;
+    }
+}
+var toggleEar = 0;
+function expandEarOptions(){
+    if(toggleEar == 0){
+        document.getElementById("earSizeOption").style.display = "block";
+        document.getElementById("expandEarOptions").className = "fa fa-caret-up";
+        toggleEar = 1;
+    }
+    else if(toggleEar == 1){
+        document.getElementById("earSizeOption").style.display = "none";
+        document.getElementById("expandEarOptions").className = "fa fa-caret-down";
+        toggleEar = 0;
+    }
+}
+var toggleFreckles = 0;
+function expandFreckleOptions(){
+    if(toggleFreckles == 0){
+        document.getElementById("freckleColorOption").style.display = "block";
+        document.getElementById("expandFreckleOptions").className = "fa fa-caret-up";
+        toggleFreckles = 1;
+    }
+    else if(toggleFreckles == 1){
+        document.getElementById("freckleColorOption").style.display = "none";
+        document.getElementById("expandFreckleOptions").className = "fa fa-caret-down";
+        toggleFreckles = 0;
+    }
+}
+// var toggleHair = 0;
+// function expandHairOptions(){
+//     if(toggleHair == 0){
+//         document.getElementById("hairLengthOption").style.display = "block";
+//         document.getElementById("hairColorOption").style.display = "block";
+//         document.getElementById("expandHairOptions").className = "fa fa-caret-up";
+//         toggleHair = 1;
+//     }
+//     else if(toggleHair == 1){
+//         document.getElementById("hairLengthOption").style.display = "none";
+//         document.getElementById("hairColorOption").style.display = "none";
+//         document.getElementById("expandHairOptions").className = "fa fa-caret-down";
+//         toggleHair = 0;
+//     }
+// }

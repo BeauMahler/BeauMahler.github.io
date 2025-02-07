@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <script type="text/javascript" src="changes.js"></script>
         <script type="module" src="https://unpkg.com/slider-color-picker"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body onload="loadFaceScreen()">
         <div id="main">
@@ -17,12 +18,13 @@
                     <button class="faceOptionButton" disabled><img src="images/eyes1.png" class="eyeButton"/></button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
+                    <button class="faceOptionButton"><i class="fa fa-caret-up" aria-hidden="true" id="expandEyeOptions" onclick="expandEyeOptions()"></i></button>
                 </div>
-                <div class="slidecontainer">
+                <div class="slidecontainer" id="eyeSizeOption">
                     <label for="eyesize" class="optionsLabel">Eye size:</label>
                     <input type="range" min="1" max="7" value="4" class="optionsSlider" disabled>
                 </div>
-                <div class="slidecontainer">
+                <div class="slidecontainer" id="eyeColorOption">
                     <label for="eyecolor">Eyecolor:</label>
                     <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
                 </div>
@@ -31,8 +33,9 @@
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="expandNoseOptions" onclick="expandNoseOptions()"></i></button>
                 </div>
-                <div class="slidecontainer">
+                <div class="slidecontainer" id="noseSizeOption">
                     <label for="nosesize" class="optionsLabel">Nose size:</label>
                     <input type="range" min="1" max="7" value="4" class="optionsSlider" disabled>
                 </div>
@@ -41,8 +44,9 @@
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="expandMouthOptions" onclick="expandMouthOptions()"></i></button>
                 </div>
-                <div class="slidecontainer">
+                <div class="slidecontainer" id="mouthSizeOption">
                     <label for="mouthsize" class="optionsLabel">Mouth size:</label>
                     <input type="range" min="1" max="7" value="4" class="optionsSlider" disabled>
                 </div>
@@ -50,30 +54,46 @@
                     <button class="faceOptionButton" onclick="mustacheClicked(false)" id="noMustacheButton">None</button>
                     <button class="faceOptionButton" onclick="mustacheClicked(true)" id="mustacheButton">Mustache</button>
                     <button class="faceOptionButton" disabled>Beard and mustache</button>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="expandFacialHairOptions" onclick="expandFacialHairOptions()"></i></button>
+                </div>
+                <div class="slidecontainer" id="facialHairColorOption">
+                    <label for="haircolor">Facial hair color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
                 </div>
                 <div><label for="hairstyle">Hairstyle:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="expandHairOptions" onclick="expandHairOptions()"></i></button>
                 </div>
-                <div class="slidecontainer">
+                <div class="slidecontainer" id="hairColorOption">
                     <label for="haircolor">Haircolor:</label>
                     <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div class="slidecontainer" id="hairLengthOption">
+                    <label for="mouthsize" class="optionsLabel">Hair length:</label>
+                    <input type="range" min="1" max="7" value="4" class="optionsSlider" disabled>
                 </div>
                 <div><label for="eyebrows">Eyebrows:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="expandEyebrowOptions" onclick="expandEyebrowOptions()"></i></button>
+                </div>
+                <div class="slidecontainer" id="eyebrowColorOption">
+                    <label for="haircolor">Eyebrow color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
                 </div>
                 <div><label for="ears">Ears:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="expandEarOptions" onclick="expandEarOptions()"></i></button>
                 </div>
-                <div class="slidecontainer">
+                <div class="slidecontainer" id="earSizeOption">
                     <label for="earsize" class="optionsLabel">Ear size:</label>
                     <input type="range" min="1" max="7" value="4" class="optionsSlider" disabled>
                 </div>
@@ -82,6 +102,11 @@
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="expandFreckleOptions" onclick="expandFreckleOptions()"></i></button>
+                </div>
+                <div class="slidecontainer" id="freckleColorOption">
+                    <label for="haircolor">Freckles color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
                 </div>
                 <div><label for="makeup">Make-up:</label>
                     <button class="faceOptionButton">None</button>
@@ -92,7 +117,6 @@
                     <button class="faceOptionButton" disabled>Eyeliner</button>
                 </div>
                 <div><label for="facepresets">Presets:</label>
-                    <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
                     <button class="faceOptionButton" disabled>Option C</button>
