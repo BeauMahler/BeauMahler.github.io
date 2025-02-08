@@ -954,18 +954,35 @@ function expandFreckleOptions(){
         toggleFreckles = 0;
     }
 }
-// var toggleHair = 0;
-// function expandHairOptions(){
-//     if(toggleHair == 0){
-//         document.getElementById("hairLengthOption").style.display = "block";
-//         document.getElementById("hairColorOption").style.display = "block";
-//         document.getElementById("expandHairOptions").className = "fa fa-caret-up";
-//         toggleHair = 1;
-//     }
-//     else if(toggleHair == 1){
-//         document.getElementById("hairLengthOption").style.display = "none";
-//         document.getElementById("hairColorOption").style.display = "none";
-//         document.getElementById("expandHairOptions").className = "fa fa-caret-down";
-//         toggleHair = 0;
-//     }
-// }
+
+
+var lastColorItem = "shirtColorOption";
+var lastPatternItem = "shirtPatternOption";
+var lastButtonItem = "shirtExpandOptions";
+
+function expandMenuOptions(menuitem){
+    var coloritem = menuitem.toString() + "ColorOption";
+    var patternitem = menuitem.toString() + "PatternOption";
+    var buttonitem = menuitem.toString() + "ExpandOptions"; 
+
+    if(document.getElementById(buttonitem).className == "fa fa-caret-down"){
+        //close last opened menu --> due to space
+        document.getElementById(lastColorItem).style.display = "none";
+        document.getElementById(lastPatternItem).style.display = "none";
+        document.getElementById(lastButtonItem).className = "fa fa-caret-down";
+        //open new menu
+        document.getElementById(coloritem).style.display = "block";
+        document.getElementById(patternitem).style.display = "block";
+        document.getElementById(buttonitem).className = "fa fa-caret-up";
+    }
+    else{
+        document.getElementById(coloritem).style.display = "none";
+        document.getElementById(patternitem).style.display = "none";
+        document.getElementById(buttonitem).className = "fa fa-caret-down";
+    }
+
+    //update latest opened menu values
+    lastColorItem = coloritem;
+    lastPatternItem = patternitem;
+    lastButtonItem = buttonitem;
+}

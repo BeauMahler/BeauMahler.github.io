@@ -4,6 +4,7 @@
         <title>Character menu prototype</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <script type="text/javascript" src="changes.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body onload="loadOutfitScreen()">
         <div id="main">
@@ -15,79 +16,210 @@
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
-                    <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
+                    <button class="faceOptionButton"><i class="fa fa-caret-up" aria-hidden="true" id="shirtExpandOptions" onclick="expandMenuOptions('shirt')"></i></button>
                 </div>
+                <div class="slidecontainer" id="shirtColorOption">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div id="shirtPatternOption">
+                    <label for="eyecolor">Pattern:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Stripes</button>
+                    <button class="faceOptionButton" disabled>Squares</button>
+                    <button class="faceOptionButton" disabled>Dots</button>
+                    <button class="faceOptionButton" disabled>Print</button>
+                </div>
+
                 <div><label for="pants">Pants:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
-                    <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="pantExpandOptions" onclick="expandMenuOptions('pant')"></i></button>                
                 </div>
+                <div class="slidecontainer" id="pantColorOption">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div id="pantPatternOption">
+                    <label for="eyecolor">Pattern:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Stripes</button>
+                    <button class="faceOptionButton" disabled>Squares</button>
+                    <button class="faceOptionButton" disabled>Dots</button>
+                    <button class="faceOptionButton" disabled>Print</button>
+                </div>
+
                 <div><label for="skirts">Skirt:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
-                    <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="skirtExpandOptions" onclick="expandMenuOptions('skirt')"></i></button>                
                 </div>
+                <div class="slidecontainer" id="skirtColorOption">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div id="skirtPatternOption">
+                    <label for="eyecolor">Pattern:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Stripes</button>
+                    <button class="faceOptionButton" disabled>Squares</button>
+                    <button class="faceOptionButton" disabled>Dots</button>
+                    <button class="faceOptionButton" disabled>Print</button>
+                </div>
+
                 <div><label for="dresses">Dress:</label>
                     <button class="faceOptionButton" onclick="dressClicked(false)" id="noDressButton">None</button>
                     <button class="faceOptionButton" onclick="dressClicked(true)" id="dressButton">Plain Green</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
-                    <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="dressExpandOptions" onclick="expandMenuOptions('dress')"></i></button>                
                 </div>
+                <div class="slidecontainer" id="dressColorOption">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div id="dressPatternOption">
+                    <label for="eyecolor">Pattern:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Stripes</button>
+                    <button class="faceOptionButton" disabled>Squares</button>
+                    <button class="faceOptionButton" disabled>Dots</button>
+                    <button class="faceOptionButton" disabled>Print</button>
+                </div>
+                
                 <div><label for="suits">Suit:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
-                    <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="suitExpandOptions" onclick="expandMenuOptions('suit')"></i></button>                
                 </div>
+                <div class="slidecontainer" id="suitColorOption">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div id="suitPatternOption">
+                    <label for="eyecolor">Pattern:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Stripes</button>
+                    <button class="faceOptionButton" disabled>Squares</button>
+                    <button class="faceOptionButton" disabled>Dots</button>
+                    <button class="faceOptionButton" disabled>Print</button>
+                </div>
+
                 <div><label for="socks">Socks:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
-                    <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="sockExpandOptions" onclick="expandMenuOptions('sock')"></i></button>                
                 </div>
+                <div class="slidecontainer" id="sockColorOption">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div id="sockPatternOption">
+                    <label for="eyecolor">Pattern:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Stripes</button>
+                    <button class="faceOptionButton" disabled>Squares</button>
+                    <button class="faceOptionButton" disabled>Dots</button>
+                    <button class="faceOptionButton" disabled>Print</button>
+                </div>
+
                 <div><label for="shoes">Shoes:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
-                    <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="shoeExpandOptions" onclick="expandMenuOptions('shoe')"></i></button>                
                 </div>
+                <div class="slidecontainer" id="shoeColorOption">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div id="shoePatternOption">
+                    <label for="eyecolor">Pattern:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Stripes</button>
+                    <button class="faceOptionButton" disabled>Squares</button>
+                    <button class="faceOptionButton" disabled>Dots</button>
+                    <button class="faceOptionButton" disabled>Print</button>
+                </div>
+
                 <div><label for="hats">Hat:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
-                    <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="hatExpandOptions" onclick="expandMenuOptions('hat')"></i></button>                
                 </div>
+                <div class="slidecontainer" id="hatColorOption">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div id="hatPatternOption">
+                    <label for="eyecolor">Pattern:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Stripes</button>
+                    <button class="faceOptionButton" disabled>Squares</button>
+                    <button class="faceOptionButton" disabled>Dots</button>
+                    <button class="faceOptionButton" disabled>Print</button>
+                </div>
+
                 <div><label for="purses">Purse:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
-                    <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="purseExpandOptions" onclick="expandMenuOptions('purse')"></i></button>  
                 </div>
+                <div class="slidecontainer" id="purseColorOption">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div id="pursePatternOption">
+                    <label for="eyecolor">Pattern:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Stripes</button>
+                    <button class="faceOptionButton" disabled>Squares</button>
+                    <button class="faceOptionButton" disabled>Dots</button>
+                    <button class="faceOptionButton" disabled>Print</button>
+                </div>
+
                 <div><label for="scarfs">Scarf:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
-                    <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="scarfExpandOptions" onclick="expandMenuOptions('scarf')"></i></button>                </div>
+                <div class="slidecontainer" id="scarfColorOption">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
                 </div>
+                <div id="scarfPatternOption">
+                    <label for="eyecolor">Pattern:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Stripes</button>
+                    <button class="faceOptionButton" disabled>Squares</button>
+                    <button class="faceOptionButton" disabled>Dots</button>
+                    <button class="faceOptionButton" disabled>Print</button>
+                </div>
+
                 <div><label for="coats">Coat:</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
-                    <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
+                    <button class="faceOptionButton"><i class="fa fa-caret-down" aria-hidden="true" id="coatExpandOptions" onclick="expandMenuOptions('coat')"></i></button>
                 </div>
+                <div class="slidecontainer" id="coatColorOption">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
+                    <input type="range" min="1"  max="100" value="50" id="custom-slider-range"  class="faceOptionButton" disabled>
+                </div>
+                <div id="coatPatternOption">
+                    <label for="eyecolor">Pattern:</label>
+                    <button class="faceOptionButton">None</button>
+                    <button class="faceOptionButton" disabled>Stripes</button>
+                    <button class="faceOptionButton" disabled>Squares</button>
+                    <button class="faceOptionButton" disabled>Dots</button>
+                    <button class="faceOptionButton" disabled>Print</button>
+                </div>
+
                 <div><label for="presets">Presets:</label>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>

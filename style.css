@@ -237,3 +237,10 @@ label {
 #noseSizeOption, #mouthSizeOption, #facialHairColorOption, #hairColorOption, #hairLengthOption, #eyebrowColorOption, #earSizeOption, #freckleColorOption{
     display: none;
 }
+
+#pantColorOption, #pantPatternOption, #skirtColorOption, #skirtPatternOption, #dressColorOption, #dressPatternOption,
+#suitColorOption, #suitPatternOption, #sockColorOption, #sockPatternOption, #shoeColorOption, #shoePatternOption, #hatColorOption, #hatPatternOption,
+#purseColorOption, #pursePatternOption, #scarfColorOption, #scarfPatternOption, #coatColorOption, #coatPatternOption
+{
+    display: none;
+}
