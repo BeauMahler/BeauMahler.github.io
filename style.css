@@ -236,6 +236,7 @@ label {
 
 #noseSizeOption, #mouthSizeOption, #facialHairColorOption, #hairColorOption, #hairLengthOption, #eyebrowColorOption, #earSizeOption, #freckleColorOption{
     display: none;
+    color: gray;
 }
 
 #pantColorOption, #pantPatternOption, #skirtColorOption, #skirtPatternOption, #dressColorOption, #dressPatternOption,
@@ -243,4 +244,9 @@ label {
 #purseColorOption, #pursePatternOption, #scarfColorOption, #scarfPatternOption, #coatColorOption, #coatPatternOption
 {
     display: none;
+    color: gray;
+}
+
+#eyeSizeOption, #eyeColorOption, #shirtColorOption, #shirtPatternOption{
+    color: gray;
 }
