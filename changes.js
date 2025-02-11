@@ -758,12 +758,12 @@ function loadfinalScreen() {
 
     //get it centered
     var checkMarginBottom = parseInt(sessionStorage.getItem('screen1marginTOP'));
-    if(checkMarginBottom >= 200){checkMarginBottom = checkMarginBottom - 50;}
-    else if(checkMarginBottom >= 150){checkMarginBottom = checkMarginBottom - 40;}
-    else if(checkMarginBottom >= 130){checkMarginBottom = checkMarginBottom - 30;}
-    else if(checkMarginBottom >= 110){checkMarginBottom = checkMarginBottom - 10;}
-    else if(checkMarginBottom >= 80){checkMarginBottom = checkMarginBottom + 10;}
-    else if(checkMarginBottom >= 50 ){checkMarginBottom = checkMarginBottom + 5;}
+    // if(checkMarginBottom >= 200){checkMarginBottom = checkMarginBottom + 30;}
+    // else if(checkMarginBottom >= 150){checkMarginBottom = checkMarginBottom - 30;}
+    // else if(checkMarginBottom >= 130){checkMarginBottom = checkMarginBottom - 30;}
+    // else if(checkMarginBottom >= 110){checkMarginBottom = checkMarginBottom - 10;}
+    // else if(checkMarginBottom >= 80){checkMarginBottom = checkMarginBottom + 10;}
+    // else if(checkMarginBottom >= 50 ){checkMarginBottom = checkMarginBottom + 5;}
    // 50 --> 60                             +10
    // 110 --> 110                           -
    // 170 --> 130                           -40

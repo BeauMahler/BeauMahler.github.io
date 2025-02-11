@@ -54,7 +54,7 @@ body {
 
 #characterbox5{
     width: 40%; 
-    border: 2px solid;
+    /* border: 2px solid; */
     overflow: hidden;
     margin: auto;
 }
@@ -84,6 +84,14 @@ body {
 #nameTag {
     margin:auto;
     bottom: 25px;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+}
+
+#finalCharacterText{
+    margin:auto;
+    top: 25px;
     font-weight: bold;
     font-size: 25px;
     position: absolute;
