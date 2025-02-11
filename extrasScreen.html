@@ -4,6 +4,7 @@
         <title>Character menu prototype</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <script type="text/javascript" src="changes.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body onload="loadOutfitScreen()">
         <div id="main">
@@ -57,14 +58,18 @@
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
+                </div>
+                <div class="slidecontainer">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
                     <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
                 </div>
                 <div><label for="bodypaint">Body paint</label>
                     <button class="faceOptionButton">None</button>
                     <button class="faceOptionButton" disabled>Option A</button>
                     <button class="faceOptionButton" disabled>Option B</button>
-                    <label for="haircolor" class="outfitcolor">Color:</label>
+                </div>
+                <div class="slidecontainer">
+                    <label for="eyecolor" class="outfitcolor">Color:</label>
                     <input type="range" min="1"  max="100" value="50" id="custom-slider-rangeOutfit"  class="faceOptionButton" disabled>
                 </div>
                 <div><label for="cigar">Smoking options</label>
@@ -74,8 +79,8 @@
                     <button class="faceOptionButton" disabled>Cigarette</button>
                 </div>
 
-                <button class="previousButton"><a href="./outfitScreen.html" class="buttonText">Previous Screen</a></button>
-                <button class="nextButton"><a href="./finalScreen.html" class="buttonText">Next Screen</a></button>
+                <button class="previousButton"><i class="fa fa-arrow-left" id="leftArrow"></i><a href="./outfitScreen.html" class="buttonText">Previous Screen</a></button>
+                <button class="nextButton"><a href="./finalScreen.html" class="buttonText">Done</a><i class="fa fa-arrow-right"  id="rightArrow"></i></button>
             </div>
             <p class="disabledText">*Disabled options are not supported yet</p>
         </div>

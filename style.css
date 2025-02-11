@@ -250,3 +250,25 @@ label {
 #eyeSizeOption, #eyeColorOption, #shirtColorOption, #shirtPatternOption{
     color: gray;
 }
+
+#rightArrow{
+    margin-left: 6px;
+}
+
+#leftArrow {
+    margin-right: 6px;
+}
+
+.optionbox {
+    float: right;
+    margin-right: 30px;
+}
+
+.optionLabel {
+    float: left;
+    margin-left: 50px;
+}
+
+.outfitcolor {
+    color: gray;
+}
