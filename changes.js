@@ -102,13 +102,13 @@ function feminineBodyType(){
         else {charImg.src = "images/Muscles/character_feminine_muscle3.png";}
    // }
     //disabilities present
-    if(amputatedArmNoProsthetic && !activateSuperpowerAmputationArm){charImg.src="images/Amputation/character_feminine_amputatedArm.png"; }
+    if(amputatedArmNoProsthetic && !activateSuperpowerAmputationArm){charImg.src="images/Amputation/character_Feminine_amputatedArm.png"; }
     if(amputatedArmNoProsthetic && activateSuperpowerAmputationArm){charImg.src="images/Superpowers/Amputation/character_feminine_amputatedArm_blade.png"; }
-    if(amputatedArmWithProsthetic && !activateSuperpowerAmputationArm){charImg.src="images/Amputation/character_feminine_amputatedArm_prosthetic.png"; }
+    if(amputatedArmWithProsthetic && !activateSuperpowerAmputationArm){charImg.src="images/Amputation/character_Feminine_amputatedArm_prosthetic.png"; }
     if(amputatedArmWithProsthetic && activateSuperpowerAmputationArm){charImg.src="images/Superpowers/Amputation/character_feminine_amputatedArm_blade.png"; }
-    if(amputatedLegNoProsthetic && !activateSuperpowerAmputationLeg){charImg.src="images/Amputation/character_feminine_amputatedLeg.png"; }
+    if(amputatedLegNoProsthetic && !activateSuperpowerAmputationLeg){charImg.src="images/Amputation/character_Feminine_amputatedLeg.png"; }
     if(amputatedLegNoProsthetic && activateSuperpowerAmputationLeg){charImg.src="images/Superpowers/Amputation/character_feminine_amputatedLeg_blade.png"; }
-    if(amputatedLegWithProsthetic && !activateSuperpowerAmputationLeg){charImg.src="images/Amputation/character_feminine_amputatedLeg_prosthetic.png"; }
+    if(amputatedLegWithProsthetic && !activateSuperpowerAmputationLeg){charImg.src="images/Amputation/character_Feminine_amputatedLeg_prosthetic.png"; }
     if(amputatedLegWithProsthetic && activateSuperpowerAmputationLeg){charImg.src="images/Superpowers/Amputation/character_feminine_amputatedLeg_blade.png"; }
     if(blindNoGlassesNoCane){charImg.src="images/LowVision/character_feminine_blind.png"; }
     if(blindWithGlassesNoCane){charImg.src="images/LowVision/character_feminine_glasses.png"; }
