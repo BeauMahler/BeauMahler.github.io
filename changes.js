@@ -70,7 +70,7 @@ function masculineBodyType(){
     if(blindWithGlassesWithCane && !activateSuperpowerBlind){charImg.src="images/LowVision/character_masculine_glasses_cane.png"; }
     if(blindWithGlassesWithCane && activateSuperpowerBlind){charImg.src="images/Superpowers/LowVision/character_masculine_glasses_cane_swordCane.png"; }
     if(deafNoHearingAids && !activateSuperpowerDeaf){charImg.src="images/MAIN/character_masculine.png"; }
-    if(deafWithHearingAids && !activateSuperpowerDeaf){charImg.src="images/LowHearing/character_masculine_hearingAids.png"; }
+    if(deafWithHearingAids && !activateSuperpowerDeaf){charImg.src="images/lowHearing/character_masculine_hearingAids.png"; }
     if(deafNoHearingAids && activateSuperpowerDeaf){charImg.src="images/Superpowers/Hearing/character_masculine_nightvision.png";}
     if(deafWithHearingAids && activateSuperpowerDeaf){charImg.src="images/Superpowers/Hearing/character_masculine_hearingAids_nightvision.png"; }
     if(dwarfismNoWheelchair && !activateSuperpowerDwarfism){charImg.src="images/Dwarfism/character_masculine_dwarfism.png"; }
@@ -117,7 +117,7 @@ function feminineBodyType(){
     if(blindWithGlassesWithCane && !activateSuperpowerBlind){charImg.src="images/LowVision/character_feminine_glasses_cane.png"; }
     if(blindWithGlassesWithCane && activateSuperpowerBlind){charImg.src="images/Superpowers/LowVision/character_feminine_glasses_cane_swordCane.png"; }
     if(deafNoHearingAids && !activateSuperpowerDeaf){charImg.src="images/MAIN/character_feminine.png"; }
-    if(deafWithHearingAids && !activateSuperpowerDeaf){charImg.src="images/LowHearing/character_feminine_hearingAids.png"; }
+    if(deafWithHearingAids && !activateSuperpowerDeaf){charImg.src="images/lowHearing/character_feminine_hearingAids.png"; }
     if(deafNoHearingAids && activateSuperpowerDeaf){charImg.src="images/Superpowers/Hearing/character_feminine_nightvision.png";}
     if(deafWithHearingAids && activateSuperpowerDeaf){charImg.src="images/Superpowers/Hearing/character_feminine_hearingAids_nightvision.png"; }
     if(dwarfismNoWheelchair && !activateSuperpowerDwarfism){charImg.src="images/Dwarfism/character_feminine_dwarfism.png"; }
@@ -165,7 +165,7 @@ function neutralBodyType(){
     if(blindWithGlassesWithCane && !activateSuperpowerBlind){charImg.src="images/LowVision/character_neutral_glasses_cane.png"; }
     if(blindWithGlassesWithCane && activateSuperpowerBlind){charImg.src="images/Superpowers/LowVision/character_neutral_glasses_cane_swordCane.png"; }
     if(deafNoHearingAids && !activateSuperpowerDeaf){charImg.src="images/MAIN/character_neutral.png"; }
-    if(deafWithHearingAids && !activateSuperpowerDeaf){charImg.src="images/LowHearing/character_neutral_hearingAids.png"; }
+    if(deafWithHearingAids && !activateSuperpowerDeaf){charImg.src="images/lowHearing/character_neutral_hearingAids.png"; }
     if(deafNoHearingAids && activateSuperpowerDeaf){charImg.src="images/Superpowers/Hearing/character_neutral_nightvision.png";}
     if(deafWithHearingAids && activateSuperpowerDeaf){charImg.src="images/Superpowers/Hearing/character_neutral_hearingAids_nightvision.png"; }
     if(dwarfismNoWheelchair && !activateSuperpowerDwarfism){charImg.src="images/Dwarfism/character_neutral_dwarfism.png"; }
