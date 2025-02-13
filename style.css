@@ -229,8 +229,10 @@ label {
 
 .disabledText{
     position: absolute;
-    right: 18%;
-    bottom: 1%;
+    right: 4%;
+    bottom: -15px;
+    font-weight: bold;
+    /* border: 2px solid; */
 }
 
 #noMustacheButton, #noDressButton{
