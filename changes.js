@@ -245,6 +245,8 @@ function superpowerSelected() {
         resetSuperpowers();
     } 
 
+    amputationLegRight.checked ? rightSideLeg = true : rightSideLeg = false;
+
     //call bodytype function, which places correct image
     if(refreshImg){
         if(currentBodyType == "neutral"){neutralBodyType(); } 
