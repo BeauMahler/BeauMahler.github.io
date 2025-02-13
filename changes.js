@@ -704,6 +704,7 @@ function saveValues(){
     sessionStorage.setItem("screen1Img", document.getElementById("characterImage").src);
     sessionStorage.setItem("screen1Skincolor", document.getElementById("characterImage").style.backgroundColor);
     sessionStorage.setItem("screen1Name", document.getElementById("nameField").value);
+    sessionStorage.setItem("screen1Mirror", document.getElementById("characterImage").style.transform);
 
     // console.log("SAVED. height: " + screen1_height);
     // console.log("width:" + screen1_width);
@@ -731,7 +732,8 @@ function loadFaceScreen(){
     charImg.src = sessionStorage.getItem('screen1Img');
     charBox.style.marginTop = sessionStorage.getItem('screen1marginTOP');
     charImg.style.marginLeft = sessionStorage.getItem('screen1marginLEFT');
-    charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor');  
+    charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor'); 
+    charImg.style.transform = sessionStorage.getItem('screen1Mirror');
 }
 
 function loadOutfitScreen(){
@@ -745,6 +747,7 @@ function loadOutfitScreen(){
     charBox.style.marginTop = sessionStorage.getItem('screen1marginTOP');
     charImg.style.marginLeft = sessionStorage.getItem('screen1marginLEFT');
     charImg.style.backgroundColor = sessionStorage.getItem('screen1Skincolor'); 
+    charImg.style.transform = sessionStorage.getItem('screen1Mirror');
     
     var checkHeight = parseInt(sessionStorage.getItem('screen1Height'));
 }
@@ -752,6 +755,7 @@ function loadOutfitScreen(){
 function loadfinalScreen() {
     var charBox = document.getElementById("characterbox5");
     var charImg = document.getElementById("characterImage5");
+    charImg.style.transform = sessionStorage.getItem('screen1Mirror');
 
     var checkHeight = parseInt(sessionStorage.getItem('screen1Height'));
     if(checkHeight > 600){checkHeight = checkHeight - 40 + "px"};
