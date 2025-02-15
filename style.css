@@ -286,3 +286,7 @@ label {
 .outfitcolor {
     color: gray;
 }
+
+.extraButton {
+    margin: 6px 0px;;
+}
